@@ -1,9 +1,12 @@
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../auth/useAuthContext";
+import { toast } from "react-toastify";
 
 const Login = () => {
-    const { login, isAuthenticated } = useAuthContext();
+    const { login } = useAuthContext();
+
+    const navigate = useNavigate();
 
     const phoneRef = useRef(null);
     const passwordRef = useRef(null);
@@ -11,7 +14,8 @@ const Login = () => {
         const phone = phoneRef.current.value;
         const password = passwordRef.current.value;
         login(phone, password);
-        console.log("da nhan ", isAuthenticated);
+        toast.success("Đăng nhập thành công");
+        navigate("/");
     };
     return (
         <div className="bg-login">
@@ -57,7 +61,7 @@ const Login = () => {
                                             <b>Quên mật khẩu?</b>
                                         </p>
                                     </div>
-                                    
+
                                     <div className="d-flex align-items-center mt-3">
                                         <input type="checkbox" className="item-checkbox" style={{ height: "15px" }} />
                                         <p>Lưu thông tin đăng nhập</p>
