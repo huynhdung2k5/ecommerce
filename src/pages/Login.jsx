@@ -52,11 +52,12 @@ const Login = () => {
                                             name="first-name"
                                             placeholder="Nhập mật khẩu"
                                         />
+                                        <div className="d-flex"></div>
                                         <p style={{ float: "right" }}>
                                             <b>Quên mật khẩu?</b>
                                         </p>
                                     </div>
-
+                                    
                                     <div className="d-flex align-items-center mt-3">
                                         <input type="checkbox" className="item-checkbox" style={{ height: "15px" }} />
                                         <p>Lưu thông tin đăng nhập</p>
