@@ -812,7 +812,7 @@ classnames@2.x, classnames@^2.2.1, classnames@^2.2.3, classnames@^2.2.5, classna
   resolved "https://registry.npmjs.org/classnames/-/classnames-2.3.2.tgz"
   integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
 
-clsx@^1.1.1:
+clsx@^1.1.0, clsx@^1.1.1:
   version "1.2.1"
   resolved "https://registry.npmjs.org/clsx/-/clsx-1.2.1.tgz"
   integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
@@ -1367,7 +1367,7 @@ prop-types-extra@^1.1.0:
     react-is "^16.3.2"
     warning "^4.0.0"
 
-prop-types@^15.6.2, prop-types@^15.8.1:
+prop-types@^15.5.0, prop-types@^15.6.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -1833,6 +1833,14 @@ react-share@^4.4.1:
     classnames "^2.3.2"
     jsonp "^0.2.1"
 
+react-tabs@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/react-tabs/-/react-tabs-6.0.1.tgz#3fdb6fd7408f38adfa7b1815b607cd5228e76c8b"
+  integrity sha512-XE5D/iCcwUsr06wf6fWrjA/HbUaj3G2+6NMVJygZuKALHkWYp+D3ZPcG2VctuaOHHzMU48eSOuxwBALBnuXldA==
+  dependencies:
+    clsx "^1.1.0"
+    prop-types "^15.5.0"
+
 react-to-print@^2.14.12:
   version "2.14.12"
   resolved "https://registry.npmjs.org/react-to-print/-/react-to-print-2.14.12.tgz"
@@ -2091,3 +2099,8 @@ yaml@^1.10.2:
   version "1.10.2"
   resolved "https://registry.npmjs.org/yaml/-/yaml-1.10.2.tgz"
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
+
+yarn@^1.22.19:
+  version "1.22.19"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.19.tgz#4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
+  integrity sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ==

@@ -18,8 +18,13 @@ import Dones from "./pages/Done";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
+import OrderUser from "./pages/OrderUser";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import UserLayout from "./pages/UserLayout";
+import Address from "./pages/Address";
+import FavoriteProduct from "./pages/FavoriteProduct";
+import ChangePassword from "./pages/ChangePassword";
 
 axios.defaults.baseURL = "http://127.0.0.1:4000";
 axios.defaults.withCredentials = true;
@@ -42,7 +47,13 @@ function App() {
                         <Route path="done" element={<Dones />} />
                         <Route path="login" element={<Login />} />
                         <Route path="register" element={<Register />} />
-                        <Route path="profile" element={<Profile />} />
+                        <Route path="/user" element={<UserLayout />}>
+                            <Route path="/user/profile" element={<Profile />} />
+                            <Route path="/user/order" element={<OrderUser />} />
+                            <Route path="/user/address" element={<Address />} />
+                            <Route path="/user/favorite" element={<FavoriteProduct />} />
+                            <Route path="/user/change-password" element={<ChangePassword />} />
+                        </Route>
                     </Route>
                 </Routes>
                 <ToastContainer />

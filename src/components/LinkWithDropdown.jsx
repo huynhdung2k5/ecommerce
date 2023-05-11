@@ -9,7 +9,7 @@ export default function LinkWithDropdown({ to, children }) {
                 {children}
             </Link>
             <div className="dropdown-menu">
-                <Link to="/demo-a" className="dropdown-item">
+                <Link to="/user/profile" className="dropdown-item">
                     Thông tin tài khoảng
                 </Link>
                 <Link to="/demo-b" className="dropdown-item">
