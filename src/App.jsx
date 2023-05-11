@@ -17,6 +17,7 @@ import Payment from "./pages/Payment";
 import Dones from "./pages/Done";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Profile from "./pages/Profile";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -41,6 +42,7 @@ function App() {
                         <Route path="done" element={<Dones />} />
                         <Route path="login" element={<Login />} />
                         <Route path="register" element={<Register />} />
+                        <Route path="profile" element={<Profile />} />
                     </Route>
                 </Routes>
                 <ToastContainer />
