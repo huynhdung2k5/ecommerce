@@ -11,19 +11,21 @@ export default function OrderUser() {
     };
     return (
         <>
-            <div className="d-flex justify-content-center">
+            <div className=" col-md-6 d-flex justify-content-center">
                 <Tabs selectedTabClassName="bg-white">
-                    <TabList className="col-md-12 p-0">
-                        {items.map((ele, index) => (
-                            <Tab
-                                key={ele}
-                                style={{ borderBottom: selected === index ? "2px solid rgba(0, 187, 166, 1)" : "" }}
-                                onClick={() => handleChangeTab(index)}
-                            >
-                                {ele}
-                            </Tab>
-                        ))}
-                    </TabList>
+                        <TabList className="nav nav-pills nav-fill">
+                            {items.map((ele, index) => (
+                                <Tab
+                                className="nav-item"
+                                    key={ele}
+                                    style={{ borderBottom: selected === index ? "2px solid rgba(0, 187, 166, 1)" : "" }}
+                                    onClick={() => handleChangeTab(index)}
+                                >
+                                    {ele}
+                                </Tab>
+                            ))}
+                        </TabList>
+                
 
                     <TabPanel>
                         <h2>Any content 1</h2>

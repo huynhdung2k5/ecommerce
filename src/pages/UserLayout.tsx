@@ -56,7 +56,7 @@ export default function UserLayout({ children }) {
                 <div className="col-md-4">
                     <ul className="list-group">
                         {items.map((item, index) => (
-                            <Link style={{ color: selected === index ? "white" : "black" }} to={`/user${item.link}`}>
+                            <Link key={index} style={{ color: selected === index ? "white" : "black" }} to={`/user${item.link}`}>
                                 <li
                                     className={"list-group-item"}
                                     key={index}
