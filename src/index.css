@@ -337,3 +337,17 @@ aside {
     top: -10px;
     left: -80px; 
 } */
+
+.nav-tabs .nav-link {
+    border: 2px solid transparent;
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+    border-color: transparent;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    border-color: transparent transparent red transparent;
+}

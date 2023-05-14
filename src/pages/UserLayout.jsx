@@ -1,33 +1,42 @@
-import React, { useState } from "react";
-import { Link, useNavigate, Outlet } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, Outlet } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function UserLayout({ children }) {
-    // const items = ["Thông tin tài khoản", "Quản lí đơn hàng", "Địa chỉ", "Sản phẩm yêu thích", "Đổi mật khẩu"];
     const items = [
         {
             name: "Thông tin tài khoản",
-            link: "/profile",
+            link: "profile",
         },
         {
             name: "Quản lí đơn hàng",
-            link: "/order",
+            link: "order",
         },
         {
             name: "Địa chỉ",
-            link: "/address",
+            link: "address",
         },
         {
             name: "Sản phẩm yêu thích",
-            link: "/favorite",
+            link: "favorite",
         },
         {
             name: "Đổi mật khẩu",
-            link: "/change-password",
+            link: "change-password",
         },
     ];
     const [selected, setSelected] = useState(0);
     const [title, setTitle] = useState(items[0].name);
-    const navigate = useNavigate();
+
+    const location = useLocation();
+    const currentPath = location.pathname;
+    const currentLink = currentPath.split("/")[2];
+
+    useEffect(() => {
+        const newItem = items.find((item) => item.link === currentLink);
+        setTitle(newItem.name);
+        setSelected(items.indexOf(newItem));
+    }, [currentPath]);
 
     const handleClick = (index) => {
         setSelected(index);
@@ -46,7 +55,7 @@ export default function UserLayout({ children }) {
                                 <li>
                                     <i className="fa fa-angle-right" />
                                 </li>
-                                <li>{title}</li>
+                                <li>{selected?.name}</li>
                             </ul>
                         </div>
                     </div>
@@ -56,7 +65,11 @@ export default function UserLayout({ children }) {
                 <div className="col-md-4">
                     <ul className="list-group">
                         {items.map((item, index) => (
-                            <Link style={{ color: selected === index ? "white" : "black" }} to={`/user${item.link}`}>
+                            <Link
+                                key={index}
+                                style={{ color: selected === index ? "white" : "black" }}
+                                to={`/user/${item.link}`}
+                            >
                                 <li
                                     className={"list-group-item"}
                                     key={index}

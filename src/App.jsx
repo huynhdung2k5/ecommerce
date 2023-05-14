@@ -1,4 +1,5 @@
 import "./App.css";
+import "./style.css";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
 import axios from "axios";
@@ -31,7 +32,7 @@ axios.defaults.withCredentials = true;
 
 function App() {
     return (
-        <>
+        <div>
             <AuthProvider>
                 <Routes>
                     <Route path="/" element={<Layout />}>
@@ -58,7 +59,7 @@ function App() {
                 </Routes>
                 <ToastContainer />
             </AuthProvider>
-        </>
+        </div>
     );
 }
 
