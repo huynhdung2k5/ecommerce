@@ -34,8 +34,13 @@ export default function UserLayout({ children }) {
 
     useEffect(() => {
         const newItem = items.find((item) => item.link === currentLink);
-        setTitle(newItem.name);
-        setSelected(items.indexOf(newItem));
+        if (newItem) {
+            setTitle(newItem.name);
+            setSelected(items.indexOf(newItem));
+        } else {
+            setTitle("Quản lí đơn hàng");
+            setSelected(1);
+        }
     }, [currentPath]);
 
     const handleClick = (index) => {

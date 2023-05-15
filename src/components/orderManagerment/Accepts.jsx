@@ -1,12 +1,6 @@
-import React, { useCallback } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import Product1 from "../../assets/img/product/pr1.png";
-export default function AllOrder() {
-    const navigate = useNavigate();
-    const handleDetails = useCallback((e) => {
-        e.preventDefault();
-        navigate("/user/order-details");
-    }, []);
+
+export default function Accepts() {
     return (
         <>
             <div className="search-container mt-2">
@@ -32,12 +26,14 @@ export default function AllOrder() {
 
             <div className="container-successful mt-2">
                 <div className="icon-car">
-                    {/* <span> */}
-                    <i className="fa-solid fa-car-side"></i>
-                    {/* </span> */}
+                    <span>
+                        <i style={{ color: "#757575" }} className="fa-solid fa-spinner"></i>
+                    </span>
                 </div>
                 <div className="text-successful">
-                    <p className="text">Giao hàng và trả hàng thành công</p>
+                    <p className="text" style={{ color: "#757575" }}>
+                        Đang xử lý
+                    </p>
                 </div>
             </div>
 
@@ -115,27 +111,11 @@ export default function AllOrder() {
                             </div>
                             <div className="btn-option">
                                 <button
-                                    onClick={(e) => handleDetails(e)}
                                     type="submit"
                                     className="btn btn-white"
                                     style={{ alignItems: "center", display: "flex" }}
                                 >
                                     <a href="">Xem chi tiết</a>
-                                </button>
-
-                                <button
-                                    disabled="disabled"
-                                    className="btn btn-outline-success"
-                                    style={{ alignItems: "center", display: "flex" }}
-                                >
-                                    Đánh giá
-                                </button>
-                                <button
-                                    disabled="disabled"
-                                    className="btn btn-outline-success"
-                                    style={{ alignItems: "center", display: "flex" }}
-                                >
-                                    Thuê lại
                                 </button>
                             </div>
                         </div>

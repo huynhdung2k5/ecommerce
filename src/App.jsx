@@ -26,6 +26,7 @@ import UserLayout from "./pages/UserLayout";
 import Address from "./pages/Address";
 import FavoriteProduct from "./pages/FavoriteProduct";
 import ChangePassword from "./pages/ChangePassword";
+import OrderDetail from "./pages/OrderDetails";
 
 axios.defaults.baseURL = "http://127.0.0.1:4000";
 axios.defaults.withCredentials = true;
@@ -54,6 +55,7 @@ function App() {
                             <Route path="/user/address" element={<Address />} />
                             <Route path="/user/favorite" element={<FavoriteProduct />} />
                             <Route path="/user/change-password" element={<ChangePassword />} />
+                            <Route path="/user/order-details" element={<OrderDetail />} />
                         </Route>
                     </Route>
                 </Routes>
