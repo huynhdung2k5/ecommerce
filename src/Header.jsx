@@ -20,8 +20,10 @@ export default function Header() {
 
     const { isAuthenticated } = useAuthContext();
 
-    const handleCart = () => {
+    const handleCart = (e) => {
+        e.preventDefault();
         if (isAuthenticated) {
+            setCartShow((prev) => !prev);
             navigate("/cart");
         } else {
             toast.error("Vui lòng đăng nhập");
@@ -99,7 +101,7 @@ export default function Header() {
                                 </form>
                             </div>
                             <div className="shopping_cart">
-                                <a href="#" onClick={handleCart}>
+                                <a href="#" onClick={() => setCartShow((prev) => !prev)}>
                                     <i className="fa fa-shopping-cart" /> 2SP - 238.000đ{" "}
                                     <i className="fa fa-angle-down" />
                                 </a>
@@ -126,7 +128,13 @@ export default function Header() {
                                             </div>
                                         </div>
                                         <div className="cart_button">
-                                            <Link to={"/cart"}>Xem giỏ hàng</Link>
+                                            <button
+                                                onClick={(e) => handleCart(e)}
+                                                className="btn"
+                                                style={{ color: "#ffffff", backgroundColor: "#00BBA6" }}
+                                            >
+                                                Xem giỏ hàng
+                                            </button>
                                         </div>
                                     </div>
                                 )}

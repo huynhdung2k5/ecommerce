@@ -12,7 +12,31 @@ export default function OrderDetail() {
 
     return (
         <div className="container col-md-8">
-            <table className="table table-bordered">
+            <div className="container border mb-2 p-2">
+                <span style={{ fontWeight: "bold" }}>Chi tiết đơn hàng #DH003</span> -{" "}
+                <span style={{ fontWeight: "bold", color: "#018576" }}>Đang xử lý</span>
+            </div>
+            <div className="d-flex justify-content-between mb-2" style={{ gap: 10 }}>
+                <div className="p-2 border" style={{ width: "49%" }}>
+                    <span style={{ fontSize: 16, fontWeight: "bold" }}>Địa chỉ nhận hàng</span>
+                    <br />
+                    <span>Trần Thị Minh Uyên</span>
+                    <br />
+                    <span>Địa chỉ: K02/12 Phan Hành Sơn, Phường Mỹ An, Quận Ngũ hành Sơn, Đà Nẵng.</span>
+                    <br />
+                    <span>Điện thoại: 0967177830</span>
+                </div>
+                <div className="p-2 border" style={{ width: "49%" }}>
+                    <span style={{ fontSize: 16, fontWeight: "bold" }}>Địa chỉ nhận hàng</span>
+                    <br />
+                    <span>Trần Thị Minh Uyên</span>
+                    <br />
+                    <span>Địa chỉ: K02/12 Phan Hành Sơn, Phường Mỹ An, Quận Ngũ hành Sơn, Đà Nẵng.</span>
+                    <br />
+                    <span>Điện thoại: 0967177830</span>
+                </div>
+            </div>
+            <table className="table">
                 <thead style={{ backgroundColor: "#DDDDDD" }}>
                     <tr>
                         <th scope="col">Sản phẩm</th>
@@ -24,7 +48,7 @@ export default function OrderDetail() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr style={{ borderBottom: "1px solid black" }}>
+                    <tr style={{ border: "1px solid #DDDDDD" }}>
                         <td>
                             <div className="product-detail" style={{ display: "flex" }}>
                                 <div className="product-img">
@@ -61,7 +85,7 @@ export default function OrderDetail() {
                         <td style={{ textAlign: "center" }}>2</td>
                         <td style={{ textAlign: "center" }}>20</td>
                     </tr>
-                    <tr style={{ borderBottom: "1px solid black" }}>
+                    <tr style={{ border: "1px solid #DDDDDD" }}>
                         <td>
                             <div className="product-detail" style={{ display: "flex" }}>
                                 <div className="product-img">
@@ -100,6 +124,34 @@ export default function OrderDetail() {
                     </tr>
                 </tbody>
             </table>
+
+            <div className="container d-flex justify-content-end" style={{ gap: 5 }}>
+                <div className="col-col-md-5">
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand" }}>Tổng tiền hàng:</span>
+                    <br />
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand" }}>Phí vận chuyển:</span>
+                    <br />
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand" }}>Mã giảm giá: </span>
+                    <br />
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand" }}>Tổng thanh toán:</span>
+                    <br />
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand" }}>Phương thức thanh toán:</span>
+                </div>
+                <div className=" col-col-md-5 " style={{ paddingTop: 7 }}>
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>537.000đ</span>
+                    <br />
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>15.000đ</span>
+                    <br />
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>-10.000đ</span>
+                    <br />
+                    <span style={{ color: "#E74B32", fontWeight: "bold", fontSize: 18, float: "right" }}>362.000đ</span>
+                    <br />
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>
+                        Thanh toán khi nhận hàng
+                    </span>
+                </div>
+            </div>
+
             <div className="d-flex justify-content-between">
                 <button
                     onClick={(e) => handleExit(e)}

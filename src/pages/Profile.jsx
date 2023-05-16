@@ -59,48 +59,51 @@ export default function Profile() {
                 <div className="d-flex flex-column">
                     <span style={{ fontSize: 16 }}>Ngày sinh</span>
                     <div className="d-flex" style={{ gap: 20 }}>
-                        <div className="form-check">
+                        <div class="form-check">
                             <input
-                                style={{ backgroundColor: "red" }}
-                                className="form-check-input"
+                                style={{ height: 15 }}
+                                class="form-check-input"
                                 type="radio"
-                                name="exampleRadios"
-                                id="exampleRadios1"
-                                value="option1"
-                                checked
+                                name="gender"
+                                id="male"
+                                value="male"
                             />
-                            <label className="form-check-label" htmlFor="exampleRadios1">
+                            <label class="form-check-label" for="male">
                                 Nam
                             </label>
                         </div>
-                        <div className="form-check">
+
+                        <div class="form-check">
                             <input
-                                className="form-check-input"
+                                style={{ height: 15 }}
+                                class="form-check-input"
                                 type="radio"
-                                name="exampleRadios"
-                                id="exampleRadios2"
-                                value="option2"
+                                name="gender"
+                                id="female"
+                                value="female"
                             />
-                            <label className="form-check-label" htmlFor="exampleRadios2">
+                            <label class="form-check-label" for="female">
                                 Nữ
                             </label>
                         </div>
-                        <div className="form-check">
+                        <div class="form-check">
                             <input
-                                className="form-check-input"
+                                style={{ height: 15 }}
+                                class="form-check-input"
                                 type="radio"
-                                name="exampleRadios"
-                                id="exampleRadios3"
-                                value="option2"
+                                name="gender"
+                                id="female"
+                                value="female"
                             />
-                            <label className="form-check-label" htmlFor="exampleRadios3">
+                            <label class="form-check-label" for="female">
                                 Khác
                             </label>
                         </div>
                     </div>
-                    <div className="d-flex" style={{ justifyContent: "end" }}>
+                    <div className="d-flex justify-content-end">
                         <button
-                            className="btn flex-end col-md-4"
+                            onClick={(e) => e.preventDefault()}
+                            className="btn col-md-4"
                             style={{ backgroundColor: "#00BBA6", color: "white" }}
                         >
                             Lưu chỉnh sửa
