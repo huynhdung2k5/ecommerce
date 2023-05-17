@@ -493,3 +493,7 @@ ul li a.active {
 
     border: 0.3px solid #000000;
 }
+
+.bs-stepper .step-trigger:focus {
+    color: #00bba6;
+}

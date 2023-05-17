@@ -6,7 +6,12 @@ import Done2 from "../assets/img/done2.png";
 import Product1 from "../assets/img/product/pr1.png";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../auth/useAuthContext";
-import { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
+
+//Components
+import CartComponent from "../components/Cart/CartComponent";
+import PaymentComponent from "../components/Cart/PaymentComponent";
+import Completed from "../components/Cart/Completed";
 
 const Cart = () => {
     const { isAuthenticated } = useAuthContext();
@@ -16,11 +21,52 @@ const Cart = () => {
     };
 
     useEffect(() => {
-        if (isAuthenticated === false) {
+        if (!isAuthenticated) {
             navigate("/");
         }
-        console.log(isAuthenticated);
     }, [isAuthenticated]);
+
+    // stepper
+    const items = [
+        {
+            title: "Giỏ hàng",
+            id: "cart",
+            content: <CartComponent />,
+            active: true,
+        },
+        {
+            title: "Thanh toán",
+            id: "payment",
+            content: <PaymentComponent />,
+            active: false,
+        },
+        {
+            title: "Hoàn tất",
+            id: "compeleted",
+            content: <Completed />,
+            active: false,
+        },
+    ];
+    const [selected, setSelected] = useState(0);
+    const [steps, setSteps] = useState(items);
+
+    const handleClickStepper = (step, idx) => {
+        setSelected(idx);
+
+        if (idx > 0 && items[idx - 1].active) {
+            if (!step.active) {
+                step.active = !step.active;
+                steps.splice(idx, 1, step);
+                console.log("test: ", steps);
+
+                setSteps(steps);
+            } else {
+                const data = steps.find((_, index) => index === idx + 1);
+                data.active = false;
+                steps.splice(idx + 1, 1, data);
+            }
+        }
+    };
 
     return (
         <div className="">
@@ -41,7 +87,50 @@ const Cart = () => {
                     </div>
                 </div>
             </div>
-            <div className=" pos_home_section shop_section shop_fullwidth" style={{ padding: "30px 100px" }}>
+            <div className="bs-stepper">
+                <div className="bs-stepper-header" role="tablist">
+                    {steps.map((step, idx) => (
+                        <React.Fragment key={step.id}>
+                            <div className={step.active ? "step active" : "step"} data-target={`#${step.id}`}>
+                                <button
+                                    onClick={() => handleClickStepper(step, idx)}
+                                    type="button"
+                                    className="step-trigger"
+                                    role="tab"
+                                    aria-controls={step.id}
+                                    id={step.id}
+                                >
+                                    <span
+                                        className="bs-stepper-circle"
+                                        style={{ backgroundColor: step.active ? "#00bba6" : "" }}
+                                    >
+                                        <i className="fa-solid fa-cart-shopping"></i>
+                                    </span>
+                                    <span style={{ color: step.active ? "#00bba6" : "" }} className="bs-stepper-label">
+                                        {step.title}
+                                    </span>
+                                </button>
+                            </div>
+                            {idx !== 2 && <div className="line"></div>}
+                        </React.Fragment>
+                    ))}
+                </div>
+                <div className="bs-stepper-content pb-0">
+                    {steps.map((step, idx) => (
+                        <div
+                            key={step.id}
+                            id={step.id}
+                            className={`content ${selected === idx && "active"}`}
+                            role="tabpanel"
+                            aria-labelledby={step.id}
+                        >
+                            {step.content}
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* <div className=" pos_home_section shop_section shop_fullwidth" style={{ padding: "30px 100px" }}>
                 <div className="time-line">
                     <ul className="step">
                         <li className="step-item">
@@ -71,14 +160,14 @@ const Cart = () => {
                         <li className="step-item">
                             <div className="">
                                 <b>Tiếp tục mua sắm</b>
-                                <i class="fa-solid fa-arrow-right"></i>
+                                <i className="fa-solid fa-arrow-right"></i>
                             </div>
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> */}
 
-            <div className="shopping_cart_area">
+            {/* <div className="shopping_cart_area">
                 <form action="#">
                     <div className="row">
                         <div className="col-12">
@@ -196,7 +285,7 @@ const Cart = () => {
                         Đặt hàng
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };
