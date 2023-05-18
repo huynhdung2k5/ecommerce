@@ -20,10 +20,6 @@ const DetailProduct = () => {
         }
     }, [id]);
 
-    console.log("====================================");
-    console.log(product);
-    console.log("====================================");
-
     return (
         <>
             <div>
@@ -456,8 +452,8 @@ const DetailProduct = () => {
                     </div>
                 </div>
                 <div className="row">
-                    {dataProduct?.map((item) => (
-                        <div className="col-lg-3 col-md-4 col-sm-6">
+                    {dataProduct?.map((item, idx) => (
+                        <div key={idx} className="col-lg-3 col-md-4 col-sm-6">
                             <div className="single_product">
                                 <div className="product_thumb">
                                     <Link to={`/detail-product/${item.id}`}>

@@ -1,7 +1,7 @@
 import product1 from "../../assets/img/product/pr11.png";
 import product2 from "../../assets/img/product/pr10.png";
 import product3 from "../../assets/img/product/pr9.png";
-export default function CartComponent() {
+export default function CartComponent({ steps, setSteps, idx, setSelected }) {
     const items = [
         {
             name: "Đầm trắng - mẫu 01",
@@ -25,6 +25,13 @@ export default function CartComponent() {
             quantity: 1,
         },
     ];
+
+    const handleClick = () => {
+        setSelected(idx + 1);
+        steps[idx + 1].active = true;
+        setSteps(steps);
+        console.log(steps);
+    };
     return (
         <div className="container">
             <table className="table border">
@@ -144,7 +151,9 @@ export default function CartComponent() {
                     357.000đ
                 </p>
 
-                <button className="btn btn-success col-md-3">Đặt Hàng</button>
+                <button onClick={() => handleClick()} className="btn btn-success col-md-3">
+                    Đặt Hàng
+                </button>
             </div>
         </div>
     );

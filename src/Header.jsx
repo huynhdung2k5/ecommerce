@@ -23,7 +23,7 @@ export default function Header() {
     const handleCart = (e) => {
         e.preventDefault();
         if (isAuthenticated) {
-            setCartShow((prev) => !prev);
+            setCartShow(!cartShow);
             navigate("/cart");
         } else {
             toast.error("Vui lòng đăng nhập");
@@ -106,8 +106,9 @@ export default function Header() {
                                     <i className="fa fa-angle-down" />
                                 </a>
                                 {/*mini cart*/}
+
                                 {cartShow && (
-                                    <div className="mini_cart">
+                                    <div className={`mini_cart animated ${cartShow ? "fadeIn" : ""}`}>
                                         <div className="cart_item">
                                             <div className="cart_img">
                                                 <a href="#">
@@ -138,6 +139,7 @@ export default function Header() {
                                         </div>
                                     </div>
                                 )}
+
                                 {/*mini cart end*/}
                             </div>
                         </div>
@@ -157,137 +159,9 @@ export default function Header() {
                                         </li>
                                         <li className={location.pathname == "/about-us" ? "active" : ""}>
                                             <Link to={"/about-us"}>GIỚI THIỆU</Link>
-                                            <div className="mega_menu jewelry">
-                                                <div className="mega_items jewelry">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="shop-list.html">shop list</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="shop-fullwidth.html">shop Full Width Grid</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="shop-fullwidth-list.html">shop Full Width list</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="shop-sidebar.html">shop Right Sidebar</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="shop-sidebar-list.html">shop list Right Sidebar</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="single-product.html">Product Details</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="single-product-sidebar.html">Product sidebar</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="single-product-video.html">
-                                                                Product Details video
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="single-product-gallery.html">
-                                                                Product Details Gallery
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
                                         </li>
                                         <li className={location.pathname == "/product" ? "active" : ""}>
                                             <Link to={"/product"}>SẢN PHẨM</Link>
-                                            <div className="mega_menu">
-                                                <div className="mega_top fix">
-                                                    <div className="mega_items">
-                                                        <h3>
-                                                            <a href="#">Accessories</a>
-                                                        </h3>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">Cocktai</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">day</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Evening</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Sundresses</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Belts</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Sweets</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div className="mega_items">
-                                                        <h3>
-                                                            <a href="#">HandBags</a>
-                                                        </h3>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">Accessories</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Hats and Gloves</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Lifestyle</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Bras</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Scarves</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Small Leathers</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div className="mega_items">
-                                                        <h3>
-                                                            <a href="#">Tops</a>
-                                                        </h3>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="#">Evening</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Long Sleeved</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Shrot Sleeved</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Tanks and Camis</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Sleeveless</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">Sleeveless</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div className="mega_bottom fix">
-                                                    <div className="mega_thumb">
-                                                        <a href="#">
-                                                            <img src="assets\img\banner\banner1.jpg" alt="" />
-                                                        </a>
-                                                    </div>
-                                                    <div className="mega_thumb">
-                                                        <a href="#">
-                                                            <img src="assets\img\banner\banner2.jpg" alt="" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </li>
                                         <li className={location.pathname == "/policy" ? "active" : ""}>
                                             <Link to={"/policy"}>QUY ĐỊNH THUÊ</Link>

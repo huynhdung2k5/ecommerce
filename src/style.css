@@ -239,7 +239,7 @@ ul li a.active {
 }
 .container-product .content .order-options .common-option .order-total {
     display: flex;
-    justify-content: end;
+    /* justify-content: end; */
 }
 .container-product .content .order-options .common-option .order-total .order-total-title {
     margin-right: 20px;
@@ -495,5 +495,55 @@ ul li a.active {
 }
 
 .bs-stepper .step-trigger:focus {
-    color: #00bba6;
+    color: #333333;
+}
+
+.animated {
+    animation-duration: 0.5s !important;
+}
+
+ol.carousel-indicators li {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+}
+
+ol.carousel-indicators .active {
+    background-color: #018576;
+}
+
+/* banner*/
+
+.caorousel-title {
+    width: 359px;
+    height: 129px;
+
+    font-family: "MonteCarlo";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 76px;
+    line-height: 129px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+.carousel-subtitle {
+    width: 553px;
+    height: 38px;
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
 }
