@@ -125,8 +125,8 @@ export default function OrderDetail() {
                 </tbody>
             </table>
 
-            <div className="container d-flex justify-content-end" style={{ gap: 5 }}>
-                <div className="col-col-md-5">
+            <div className="container d-flex justify-content-end mb-3" style={{ gap: 20 }}>
+                <div className="col-col-md-5 d-flex flex-column gap-3">
                     <span style={{ fontSize: 18, fontFamily: "Quicksand" }}>Tổng tiền hàng:</span>
                     <br />
                     <span style={{ fontSize: 18, fontFamily: "Quicksand" }}>Phí vận chuyển:</span>
@@ -137,16 +137,27 @@ export default function OrderDetail() {
                     <br />
                     <span style={{ fontSize: 18, fontFamily: "Quicksand" }}>Phương thức thanh toán:</span>
                 </div>
-                <div className=" col-col-md-5 " style={{ paddingTop: 7 }}>
-                    <span style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>537.000đ</span>
+                <div className=" col-col-md-5 d-flex flex-column gap-3 float-right">
+                    <span className="align-self-end" style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>
+                        537.000đ
+                    </span>
                     <br />
-                    <span style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>15.000đ</span>
+                    <span className="align-self-end" style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>
+                        15.000đ
+                    </span>
                     <br />
-                    <span style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>-10.000đ</span>
+                    <span className="align-self-end" style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>
+                        -10.000đ
+                    </span>
                     <br />
-                    <span style={{ color: "#E74B32", fontWeight: "bold", fontSize: 18, float: "right" }}>362.000đ</span>
+                    <span
+                        className="align-self-end"
+                        style={{ color: "#E74B32", fontWeight: "bold", fontSize: 18, float: "right" }}
+                    >
+                        362.000đ
+                    </span>
                     <br />
-                    <span style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>
+                    <span className="align-self-end" style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>
                         Thanh toán khi nhận hàng
                     </span>
                 </div>
@@ -156,18 +167,21 @@ export default function OrderDetail() {
                 <button
                     onClick={(e) => handleExit(e)}
                     className="btn btn-lg btn-link"
-                    style={{ alignItems: "center", color: "#018576", fontWeight: 600 }}
+                    style={{ alignItems: "center", color: "#018576", fontSize: 16, fontWeight: 600 }}
                 >
                     <i style={{ color: "#018576" }} className="fa-solid fa-chevron-left mr-1"></i>
                     Quay lại
                 </button>
                 <div className="btn-option d-flex" style={{ float: "right", gap: 10 }}>
-                    <button className="btn btn-lg btn-light" style={{ alignItems: "center" }}>
+                    <button
+                        className="btn btn-lg btn-light"
+                        style={{ alignItems: "center", fontSize: 16, fontWeight: 700 }}
+                    >
                         Liên hệ
                     </button>
                     <button
                         className="btn btn-lg btn-light"
-                        style={{ alignItems: "center" }}
+                        style={{ alignItems: "center", fontSize: 16, fontWeight: 700 }}
                         data-toggle="modal"
                         data-target="#exampleModal"
                     >
@@ -187,97 +201,94 @@ export default function OrderDetail() {
             >
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
-                        <div className="modal-header">
+                        <div className="modal-header text-center" style={{ display: "block" }}>
                             <h5 className="modal-title" id="exampleModalLabel">
-                                Modal title
+                                LÝ DO HUỶ
                             </h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
                         </div>
                         <div className="modal-body">
                             <div className="form-group">
-                                <label>Lựa chọn:</label>
-                                <div className="form-check form-check-inline">
+                                <div className="form-check" style={{ padding: "0px 20px" }}>
                                     <input
+                                        style={{ position: "relative", width: "10%", height: 10 }}
                                         className="form-check-input"
                                         type="radio"
-                                        name="option"
-                                        id="option1"
-                                        value="option1"
+                                        name="flexRadio"
+                                        id="item1"
                                     />
-                                    <label className="form-check-label" for="option1">
-                                        Lựa chọn 1
+                                    <label style={{ padding: 0 }} className="form-check-label" for="item1">
+                                        Tôi muốn cập nhật địa chỉ, số điện thoại
                                     </label>
                                 </div>
-                                <div className="form-check form-check-inline">
+                                <div className="form-check" style={{ padding: "0px 20px" }}>
                                     <input
+                                        style={{ position: "relative", width: "10%", height: 10 }}
                                         className="form-check-input"
                                         type="radio"
-                                        name="option"
-                                        id="option2"
-                                        value="option2"
+                                        name="flexRadio"
+                                        id="item2"
                                     />
-                                    <label className="form-check-label" for="option2">
-                                        Lựa chọn 2
+                                    <label style={{ padding: 0 }} className="form-check-label" for="item2">
+                                        Tôi muốn thay đổi/thêm mã giảm giá
                                     </label>
                                 </div>
-                                <div className="form-check form-check-inline">
+                                <div className="form-check" style={{ padding: "0px 20px" }}>
                                     <input
+                                        style={{ position: "relative", width: "10%", height: 10 }}
                                         className="form-check-input"
                                         type="radio"
-                                        name="option"
-                                        id="option3"
-                                        value="option3"
+                                        name="flexRadio"
+                                        id="item3"
                                     />
-                                    <label className="form-check-label" for="option3">
-                                        Lựa chọn 3
+                                    <label style={{ padding: 0 }} className="form-check-label" for="item3">
+                                        {`Tôi muốn thay đổi sản phẩm (size, màu sắc, số lượng)`}
                                     </label>
                                 </div>
-                                <div className="form-check form-check-inline">
+                                <div className="form-check" style={{ padding: "0px 20px" }}>
                                     <input
+                                        style={{ position: "relative", width: "10%", height: 10 }}
                                         className="form-check-input"
                                         type="radio"
-                                        name="option"
-                                        id="option4"
-                                        value="option4"
+                                        name="flexRadio"
+                                        id="item4"
                                     />
-                                    <label className="form-check-label" for="option4">
-                                        Lựa chọn 4
+                                    <label style={{ padding: 0 }} className="form-check-label" for="item4">
+                                        Tôi muốn thay đổi hình thức thanh toán
                                     </label>
                                 </div>
-                                <div className="form-check form-check-inline">
+                                <div className="form-check" style={{ padding: "0px 20px" }}>
                                     <input
+                                        style={{ position: "relative", width: "10%", height: 10 }}
                                         className="form-check-input"
                                         type="radio"
-                                        name="option"
-                                        id="option5"
-                                        value="option5"
+                                        name="flexRadio"
+                                        id="item5"
                                     />
-                                    <label className="form-check-label" for="option5">
-                                        Lựa chọn 5
+                                    <label style={{ padding: 0 }} className="form-check-label" for="item5">
+                                        Tôi không có nhu cầu thuê nữa
                                     </label>
                                 </div>
-                                <div className="form-check form-check-inline">
+                                <div className="form-check" style={{ padding: "0px 20px" }}>
                                     <input
+                                        style={{ position: "relative", width: "10%", height: 10 }}
                                         className="form-check-input"
                                         type="radio"
-                                        name="option"
-                                        id="option6"
-                                        value="option6"
+                                        name="flexRadio"
+                                        id="item6"
                                     />
-                                    <label className="form-check-label" for="option6">
-                                        Lựa chọn 6
+                                    <label style={{ padding: 0 }} className="form-check-label" for="item6">
+                                        Tôi không tìm thấy lý do phù hợp hơn
                                     </label>
                                 </div>
                             </div>
                         </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">
-                                Close
-                            </button>
-                            <button type="button" className="btn btn-primary">
-                                Save changes
+                        <div className="modal-footer d-flex justify-content-center">
+                            <button
+                                style={{ backgroundColor: "#00BBA680", color: "#ffffff" }}
+                                type="button"
+                                className="btn"
+                            >
+                                Huỷ đơn hàng
                             </button>
                         </div>
                     </div>

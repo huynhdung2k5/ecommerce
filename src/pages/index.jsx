@@ -28,6 +28,8 @@ import Product10 from "../assets/img/product/pr10.png";
 import Product11 from "../assets/img/product/pr11.png";
 
 import slider2 from "../assets/img/slider/slider_2.png";
+import slider3 from "../assets/img/slider/slider_3.png";
+import slider4 from "../assets/img/slider/slide_4.png";
 
 const Home = () => {
     return (
@@ -43,17 +45,30 @@ const Home = () => {
                         </ol>
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                                <img className="d-block w-100" src={slider2} alt="First slide" />
+                                <img
+                                    style={{ height: 550 }}
+                                    className="d-block w-100"
+                                    src={slider2}
+                                    alt="First slide"
+                                />
                                 <div class="carousel-caption d-none d-md-block">
                                     <span className="caorousel-title">Beauty Outfits</span>
                                     <p className="carousel-subtitle">Thời trang cho mọi người - mặc là đẹp.</p>
                                 </div>
                             </div>
-                            <div className="carousel-item">
-                                <img className="d-block w-100" src={slider2} alt="Second slide" />
+                            <div className="carousel-item" style={{ height: 550 }}>
+                                <img className="d-block w-100" src={slider3} alt="Second slide" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <span className="caorousel-title">Beauty Outfits</span>
+                                    <p className="carousel-subtitle">Thời trang cho mọi người - mặc là đẹp.</p>
+                                </div>
                             </div>
-                            <div className="carousel-item">
-                                <img className="d-block w-100" src={slider2} alt="Third slide" />
+                            <div className="carousel-item" style={{ height: 550 }}>
+                                <img className="d-block w-100" src={slider4} alt="Third slide" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <span className="caorousel-title">Beauty Outfits</span>
+                                    <p className="carousel-subtitle">Thời trang cho mọi người - mặc là đẹp.</p>
+                                </div>
                             </div>
                         </div>
                         <a
