@@ -30,6 +30,14 @@ import Product11 from "../assets/img/product/pr11.png";
 import slider2 from "../assets/img/slider/slider_2.png";
 import slider3 from "../assets/img/slider/slider_3.png";
 import slider4 from "../assets/img/slider/slide_4.png";
+import { useCallback, useEffect, useState } from "react";
+
+// rating
+import { Rating } from "react-simple-star-rating";
+
+//data
+import { dataProduct } from "../data/product";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     return (
@@ -293,138 +301,59 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-lg-3">
-                            <div className="single_product">
-                                <div className="product_thumb">
-                                    <a href="">
-                                        <img src={Product1} alt="" />
-                                    </a>
-                                    <div className="img_icone">
-                                        <img src={SpanNew} alt="" />
+                        {Array.from({ length: 4 }).map((_, idx) => (
+                            <div key={idx} className="col-lg-3">
+                                <div className="single_product">
+                                    <div className="product_thumb">
+                                        <Link to={`detail-product/${dataProduct[idx].id}`}>
+                                            <img src={dataProduct[idx].img} alt="" />
+                                        </Link>
+                                        <div className="img_icone">
+                                            <img src={SpanNew} alt="" />
+                                        </div>
+                                        <div className="product_action">
+                                            <Link to={`detail-product/${dataProduct[idx].id}`}>
+                                                <i className="fa fa-shopping-cart" /> Thêm vào giỏ hàng
+                                            </Link>
+                                        </div>
                                     </div>
-                                    <div className="product_action">
-                                        <a href="#">
-                                            {" "}
-                                            <i className="fa fa-shopping-cart" /> Thêm vào giỏ hàng
-                                        </a>
+                                    <div className="product_content pt-2">
+                                        <h3 className="product_title">
+                                            <a href="">{dataProduct[idx].name}</a>
+                                        </h3>
+                                        <p
+                                            className="old-price"
+                                            style={{ textDecoration: "line-through", display: "inline" }}
+                                        >
+                                            {dataProduct[idx].oldPrice + " - 50$"}
+                                        </p>
+                                        <br />
+                                        <span className="" style={{ fontSize: 18, fontWeight: 700 }}>
+                                            {dataProduct[idx].price}
+                                        </span>
+
+                                        <div className="d-flex" style={{ gap: 10 }}>
+                                            <Rating
+                                                size={15}
+                                                initialValue={4}
+                                                fillColor="#00BBA6"
+                                                className="p-0 m-0"
+                                            />
+                                            <span>Đã thuê: 76</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="product_content">
-                                    <span className="product_price">119.000đ</span>
-                                    <h3 className="product_title">
-                                        <a href="">Đầm Trắng - mẫu 02</a>
-                                    </h3>
-                                </div>
-                                <div className="product_info">
-                                    <ul>
-                                        <li>
-                                            <a href="#" title=" Thêm vào danh sách yêu thích ">
-                                                Thêm vào danh sách yêu thích
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <div className="product_info">
+                                        <ul>
+                                            <li>
+                                                <a href="#" title=" Thêm vào danh sách yêu thích ">
+                                                    Thêm vào danh sách yêu thích
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-3">
-                            <div className="single_product">
-                                <div className="product_thumb">
-                                    <a href="">
-                                        <img src={Product2} alt="" />
-                                    </a>
-                                    <div className="img_icone">
-                                        <img src={SpanNew} alt="" />
-                                    </div>
-                                    <div className="product_action">
-                                        <a href="#">
-                                            {" "}
-                                            <i className="fa fa-shopping-cart" /> Thêm vào giỏ hàng
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="product_content">
-                                    <span className="product_price">119.000đ</span>
-                                    <h3 className="product_title">
-                                        <a href="">Đầm Trắng - mẫu 02</a>
-                                    </h3>
-                                </div>
-                                <div className="product_info">
-                                    <ul>
-                                        <li>
-                                            <a href="#" title=" Thêm vào danh sách yêu thích ">
-                                                Thêm vào danh sách yêu thích
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3">
-                            <div className="single_product">
-                                <div className="product_thumb">
-                                    <a href="">
-                                        <img src={Product3} alt="" />
-                                    </a>
-                                    <div className="img_icone">
-                                        <img src={SpanNew} alt="" />
-                                    </div>
-                                    <div className="product_action">
-                                        <a href="#">
-                                            {" "}
-                                            <i className="fa fa-shopping-cart" /> Thêm vào giỏ hàng
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="product_content">
-                                    <span className="product_price">119.000đ</span>
-                                    <h3 className="product_title">
-                                        <a href="">Đầm Trắng - mẫu 02</a>
-                                    </h3>
-                                </div>
-                                <div className="product_info">
-                                    <ul>
-                                        <li>
-                                            <a href="#" title=" Thêm vào danh sách yêu thích ">
-                                                Thêm vào danh sách yêu thích
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3">
-                            <div className="single_product">
-                                <div className="product_thumb">
-                                    <a href="">
-                                        <img src={Product4} alt="" />
-                                    </a>
-                                    <div className="img_icone">
-                                        <img src={SpanNew} alt="" />
-                                    </div>
-                                    <div className="product_action">
-                                        <a href="#">
-                                            {" "}
-                                            <i className="fa fa-shopping-cart" /> Thêm vào giỏ hàng
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="product_content">
-                                    <span className="product_price">119.000đ</span>
-                                    <h3 className="product_title">
-                                        <a href="">Đầm Trắng - mẫu 02</a>
-                                    </h3>
-                                </div>
-                                <div className="product_info">
-                                    <ul>
-                                        <li>
-                                            <a href="#" title=" Thêm vào danh sách yêu thích ">
-                                                Thêm vào danh sách yêu thích
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
                 <div className="banner_area banner_two">
@@ -478,138 +407,59 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-lg-3">
-                            <div className="single_product">
-                                <div className="product_thumb">
-                                    <a href="">
-                                        <img src={Product8} alt="" />
-                                    </a>
-                                    <div className="img_icone">
-                                        <img src={SpanNew} alt="" />
+                        {Array.from({ length: 4 }).map((_, idx) => (
+                            <div key={idx} className="col-lg-3">
+                                <div className="single_product">
+                                    <div className="product_thumb">
+                                        <Link to={`/detail-product/${dataProduct[idx + 4].id}`}>
+                                            <img src={dataProduct[idx + 4].img} alt="" />
+                                        </Link>
+                                        <div className="img_icone">
+                                            <img src={SpanNew} alt="" />
+                                        </div>
+                                        <div className="product_action">
+                                            <Link to={`/detail-product/${dataProduct[idx + 4].id}`}>
+                                                <i className="fa fa-shopping-cart" /> Thêm vào giỏ hàng
+                                            </Link>
+                                        </div>
                                     </div>
-                                    <div className="product_action">
-                                        <a href="#">
-                                            {" "}
-                                            <i className="fa fa-shopping-cart" /> Thêm vào giỏ hàng
-                                        </a>
+                                    <div className="product_content pt-2">
+                                        <h3 className="product_title">
+                                            <a href="">{dataProduct[idx + 4].name}</a>
+                                        </h3>
+                                        <p
+                                            className="old-price"
+                                            style={{ textDecoration: "line-through", display: "inline" }}
+                                        >
+                                            {dataProduct[idx + 4].oldPrice + " - 50$"}
+                                        </p>
+                                        <br />
+                                        <span className="" style={{ fontSize: 18, fontWeight: 700 }}>
+                                            {dataProduct[idx + 4].price}
+                                        </span>
+
+                                        <div className="d-flex" style={{ gap: 10 }}>
+                                            <Rating
+                                                size={15}
+                                                initialValue={4}
+                                                fillColor="#00BBA6"
+                                                className="p-0 m-0"
+                                            />
+                                            <span>Đã thuê: 76</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="product_content">
-                                    <span className="product_price">119.000đ</span>
-                                    <h3 className="product_title">
-                                        <a href="">Đầm Trắng - mẫu 02</a>
-                                    </h3>
-                                </div>
-                                <div className="product_info">
-                                    <ul>
-                                        <li>
-                                            <a href="#" title=" Thêm vào danh sách yêu thích ">
-                                                Thêm vào danh sách yêu thích
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <div className="product_info">
+                                        <ul>
+                                            <li>
+                                                <a href="#" title=" Thêm vào danh sách yêu thích ">
+                                                    Thêm vào danh sách yêu thích
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-3">
-                            <div className="single_product">
-                                <div className="product_thumb">
-                                    <a href="">
-                                        <img src={Product9} alt="" />
-                                    </a>
-                                    <div className="img_icone">
-                                        <img src={SpanNew} alt="" />
-                                    </div>
-                                    <div className="product_action">
-                                        <a href="#">
-                                            {" "}
-                                            <i className="fa fa-shopping-cart" /> Thêm vào giỏ hàng
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="product_content">
-                                    <span className="product_price">119.000đ</span>
-                                    <h3 className="product_title">
-                                        <a href="">Đầm Trắng - mẫu 02</a>
-                                    </h3>
-                                </div>
-                                <div className="product_info">
-                                    <ul>
-                                        <li>
-                                            <a href="#" title=" Thêm vào danh sách yêu thích ">
-                                                Thêm vào danh sách yêu thích
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3">
-                            <div className="single_product">
-                                <div className="product_thumb">
-                                    <a href="">
-                                        <img src={Product10} alt="" />
-                                    </a>
-                                    <div className="img_icone">
-                                        <img src={SpanNew} alt="" />
-                                    </div>
-                                    <div className="product_action">
-                                        <a href="#">
-                                            {" "}
-                                            <i className="fa fa-shopping-cart" /> Thêm vào giỏ hàng
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="product_content">
-                                    <span className="product_price">119.000đ</span>
-                                    <h3 className="product_title">
-                                        <a href="">Đầm Trắng - mẫu 02</a>
-                                    </h3>
-                                </div>
-                                <div className="product_info">
-                                    <ul>
-                                        <li>
-                                            <a href="#" title=" Thêm vào danh sách yêu thích ">
-                                                Thêm vào danh sách yêu thích
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3">
-                            <div className="single_product">
-                                <div className="product_thumb">
-                                    <a href="">
-                                        <img src={Product11} alt="" />
-                                    </a>
-                                    <div className="img_icone">
-                                        <img src={SpanNew} alt="" />
-                                    </div>
-                                    <div className="product_action">
-                                        <a href="#">
-                                            {" "}
-                                            <i className="fa fa-shopping-cart" /> Thêm vào giỏ hàng
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="product_content">
-                                    <span className="product_price">119.000đ</span>
-                                    <h3 className="product_title">
-                                        <a href="">Đầm Trắng - mẫu 02</a>
-                                    </h3>
-                                </div>
-                                <div className="product_info">
-                                    <ul>
-                                        <li>
-                                            <a href="#" title=" Thêm vào danh sách yêu thích ">
-                                                Thêm vào danh sách yêu thích
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>

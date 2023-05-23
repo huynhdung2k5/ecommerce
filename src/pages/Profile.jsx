@@ -16,20 +16,29 @@ export default function Profile() {
             <div className="col-md-5 ml-4">
                 <div>
                     <span style={{ fontSize: 16 }}>Nhập họ và tên</span>
-                    <input value="Trần Thị Minh Uyên"></input>
+                    <input
+                        style={{ border: "1px solid #DDDDDD", backgroundColor: "#FFFFFF" }}
+                        value="Trần Thị Minh Uyên"
+                    ></input>
                 </div>
                 <br />
                 <div className="d-flex flex-row" style={{ gap: 4 }}>
                     <div className="col-md-6 pl-0 ">
                         <span style={{ fontSize: 16 }}>Nhập số điện thoại</span>
-                        <input value="Trần Thị Minh Uyên"></input>
+                        <input
+                            value="0967177830"
+                            style={{ border: "1px solid #DDDDDD", backgroundColor: "#FFFFFF" }}
+                        ></input>
                         <span style={{ fontSize: 14, color: "#00BBA6" }} className="float-right">
                             thay đổi số điện thoại
                         </span>
                     </div>
                     <div className="col-md-6 pr-0">
-                        <span style={{ fontSize: 16 }}>Nhập số điện thoại</span>
-                        <input value="Trần Thị Minh Uyên"></input>
+                        <span style={{ fontSize: 16 }}>Email</span>
+                        <input
+                            style={{ border: "1px solid #DDDDDD", backgroundColor: "#FFFFFF" }}
+                            value="uyentran99899@gmail.com"
+                        ></input>
                         <span style={{ fontSize: 14, color: "#00BBA6" }} className="float-right">
                             thay đổi số điện thoại
                         </span>
@@ -38,17 +47,29 @@ export default function Profile() {
                 <div>
                     <span style={{ fontSize: 16 }}>Ngày sinh</span>
                     <div className="d-flex" style={{ gap: 10 }}>
-                        <select className="form-select col-md-3" aria-label="Default select example">
+                        <select
+                            style={{ border: "1px solid #DDDDDD", backgroundColor: "#FFFFFF" }}
+                            className="form-select col-md-3"
+                            aria-label="Default select example"
+                        >
                             {Array.from({ length: 31 }, (_, index) => (
                                 <option>{index + 1}</option>
                             ))}
                         </select>
-                        <select className="form-select col-md-3" aria-label="Default select example">
+                        <select
+                            style={{ border: "1px solid #DDDDDD", backgroundColor: "#FFFFFF" }}
+                            className="form-select col-md-3"
+                            aria-label="Default select example"
+                        >
                             {Array.from({ length: 12 }, (_, index) => (
                                 <option>{`Tháng ${index + 1}`}</option>
                             ))}
                         </select>
-                        <select className="form-select col-md-3" aria-label="Default select example">
+                        <select
+                            style={{ border: "1px solid #DDDDDD", backgroundColor: "#FFFFFF" }}
+                            className="form-select col-md-3"
+                            aria-label="Default select example"
+                        >
                             <option slected>{2001}</option>
                             {Array.from({ length: 100 }, (_, index) => (
                                 <option>{1910 + index + 1}</option>
@@ -81,6 +102,7 @@ export default function Profile() {
                                 name="gender"
                                 id="female"
                                 value="female"
+                                defaultChecked={true}
                             />
                             <label class="form-check-label" for="female">
                                 Nữ

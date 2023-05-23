@@ -60,7 +60,7 @@ export default function UserLayout({ children }) {
                                 <li>
                                     <i className="fa fa-angle-right" />
                                 </li>
-                                <li>{selected?.name}</li>
+                                <li>{items[selected].name}</li>
                             </ul>
                         </div>
                     </div>

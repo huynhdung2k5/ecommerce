@@ -116,11 +116,11 @@ export default function Header() {
                                                 </a>
                                             </div>
                                             <div className="cart_info">
-                                                <a href="#">Đầm Trắng - Mẫu 01</a>
+                                                <p style={{ fontWeight: 600, fontSize: 16 }}>Đầm Trắng - Mẫu 01</p>
                                                 <span className="quantity">PL: Trắng, Size M</span>
                                                 <span className="quantity">SL: 1</span>
-                                                <span className="cart_price">238.000đ</span>
-                                                <span className="cart_price">119.000đ</span>
+                                                <span className="cart_old_price">238.000đ</span>
+                                                <span className="cart_new_price">119.000đ</span>
                                             </div>
                                             <div className="cart_remove">
                                                 <a title="Remove this item" href="#">
@@ -128,7 +128,26 @@ export default function Header() {
                                                 </a>
                                             </div>
                                         </div>
-                                        <div className="cart_button">
+                                        <div className="cart_item">
+                                            <div className="cart_img">
+                                                <a href="#">
+                                                    <img src={Cart1} alt="" />
+                                                </a>
+                                            </div>
+                                            <div className="cart_info">
+                                                <p style={{ fontWeight: 600, fontSize: 16 }}>Đầm Trắng - Mẫu 02</p>
+                                                <span className="quantity">PL: Trắng, Size M</span>
+                                                <span className="quantity">SL: 1</span>
+                                                <span className="cart_old_price">238.000đ</span>
+                                                <span className="cart_new_price">119.000đ</span>
+                                            </div>
+                                            <div className="cart_remove">
+                                                <a title="Remove this item" href="#">
+                                                    <i className="fa fa-times-circle" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div className="cart_button d-flex justify-content-end">
                                             <button
                                                 onClick={(e) => handleCart(e)}
                                                 className="btn"
@@ -151,7 +170,7 @@ export default function Header() {
                 <div className="row">
                     <div className="col-12">
                         <div className="main_menu_inner">
-                            <div className="main_menu d-none d-lg-block">
+                            <div className="main_menu d-lg-block">
                                 <nav>
                                     <ul>
                                         <li className={location.pathname == "/" ? "active" : ""}>
@@ -162,6 +181,60 @@ export default function Header() {
                                         </li>
                                         <li className={location.pathname == "/product" ? "active" : ""}>
                                             <Link to={"/product"}>SẢN PHẨM</Link>
+                                            <div className="mega_menu">
+                                                <div className="mega_items">
+                                                    <h3>TRANG PHỤC</h3>
+                                                    <ul>
+                                                        <li>
+                                                            <Link href="#">Thiếu nhi</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="#">Truyền thống</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="#">Nước ngoài</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="#">Hoá trang</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="#">Thường ngày</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="#">Dự tiệc</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="#">Tất cả</Link>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div className="mega_items">
+                                                    <h3>PHỤ KIỆN</h3>
+                                                    <ul>
+                                                        <li>
+                                                            <Link href="#">Tác giả</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="#">Cà vạt & nơ</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="#">Giày dép</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="#">Túi xách</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="#">Trâm cài tóc</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="#">Quạt</Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="#">Tất cả</Link>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li className={location.pathname == "/policy" ? "active" : ""}>
                                             <Link to={"/policy"}>QUY ĐỊNH THUÊ</Link>

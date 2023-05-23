@@ -4,6 +4,10 @@ import { dataProduct } from "../data/product";
 import { Link } from "react-router-dom";
 import Star from "../assets/img/star.png";
 import StarBlack from "../assets/img/star-black.png";
+// rating
+import { Rating } from "react-simple-star-rating";
+
+import SpanNew from "../assets/img/cart/span-new.png";
 
 const DetailProduct = () => {
     const [product, setProduct] = useState({});
@@ -18,7 +22,18 @@ const DetailProduct = () => {
                 setProduct(res);
             }
         }
+
+        window.scrollTo({
+            top: 0,
+        });
     }, [id]);
+
+    const handleDetail = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
 
     return (
         <>
@@ -29,12 +44,14 @@ const DetailProduct = () => {
                             <div className="breadcrumb_content">
                                 <ul>
                                     <li>
-                                        <a href="index.html">Trang chủ</a>
+                                        <Link to="/">Trang chủ</Link>
                                     </li>
-                                    <li>
+                                    <li style={{ color: "#333333" }}>
                                         <i className="fa fa-angle-right" />
                                     </li>
-                                    <li>Trang phục</li>
+                                    <li>
+                                        <Link to="/product">Trang phục</Link>
+                                    </li>
                                     <li>
                                         <i className="fa fa-angle-right" />
                                     </li>
@@ -237,9 +254,6 @@ const DetailProduct = () => {
                                     <button type="submit" className="main">
                                         Thêm vào giỏ hàng
                                     </button>
-                                    <button className="item" type="submit">
-                                        Thuê Ngay
-                                    </button>
                                 </div>
 
                                 <div className="wishlist-share">
@@ -337,16 +351,16 @@ const DetailProduct = () => {
                                             <table>
                                                 <tbody>
                                                     <tr>
-                                                        <td className="first_child">Compositions</td>
-                                                        <td>Polyester</td>
+                                                        <td className="first_child">Xuất xứ</td>
+                                                        <td>Việt Nam</td>
                                                     </tr>
                                                     <tr>
-                                                        <td className="first_child">Styles</td>
-                                                        <td>Girly</td>
+                                                        <td className="first_child">Thương hiệu</td>
+                                                        <td>UME</td>
                                                     </tr>
                                                     <tr>
-                                                        <td className="first_child">Properties</td>
-                                                        <td>Short Dress</td>
+                                                        <td className="first_child">Chất liệu</td>
+                                                        <td>Vải lụa</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -354,87 +368,89 @@ const DetailProduct = () => {
                                     </div>
                                     <div className="product_info_content">
                                         <p>
-                                            Fashion has been creating well-designed collections since 2010. The brand
-                                            offers feminine designs delivering stylish separates and statement dresses
-                                            which have since evolved into a full ready-to-wear collection in which every
-                                            item is a vital part of a woman's wardrobe. The result? Cool, easy, chic
-                                            looks with youthful elegance and unmistakable signature style. All the
-                                            beautiful pieces are made in Italy and manufactured with the greatest
-                                            attention. Now Fashion extends to a range of accessories including shoes,
-                                            hats, belts and more!
+                                            Áo dài trắng chất vải lụa tằm may dáng áo dài truyền thống 4 tà đẹp. Thiết
+                                            kế may sẵn 2 tà rộng với 1 tà trước và 1 tà sau dày dặn không lo bị xuyên
+                                            thấu khi mặc, kiểu thiết kế cổ cao 2cm ôm eo tạo dáng thanh lịch, hiện đại,
+                                            thướt tha. Thiết kế may sẵn 4 tà rộng với 2 tà trước và 2 tà sau dày dặn
+                                            không lo bị xuyên thấu khi mặc, kiểu thiết kế cổ cao 2cm ôm eo tạo dáng
+                                            thanh lịch, hiện đại, thướt tha.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="tab-pane fade" id="reviews" role="tabpanel">
-                                    <div className="product_info_content">
-                                        <p>
-                                            Fashion has been creating well-designed collections since 2010. The brand
-                                            offers feminine designs delivering stylish separates and statement dresses
-                                            which have since evolved into a full ready-to-wear collection in which every
-                                            item is a vital part of a woman's wardrobe. The result? Cool, easy, chic
-                                            looks with youthful elegance and unmistakable signature style. All the
-                                            beautiful pieces are made in Italy and manufactured with the greatest
-                                            attention. Now Fashion extends to a range of accessories including shoes,
-                                            hats, belts and more!
-                                        </p>
-                                    </div>
                                     <div className="product_info_inner">
-                                        <div className="product_ratting mb-10">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">
-                                                        <i className="fa fa-star" />
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i className="fa fa-star" />
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i className="fa fa-star" />
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i className="fa fa-star" />
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i className="fa fa-star" />
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <strong>Posthemes</strong>
-                                            <p>09/07/2018</p>
-                                        </div>
-                                        <div className="product_demo">
-                                            <strong>demo</strong>
-                                            <p>That's OK!</p>
+                                        <div className=" mb-10">
+                                            <Rating
+                                                size={15}
+                                                initialValue={4}
+                                                fillColor="#00BBA6"
+                                                className="p-0 m-0"
+                                            />
+                                            <br />
+                                            <p style={{ fontWeight: 700, fontSize: 15 }}>Hàng chuẩn mô tả</p>
+                                            <p style={{ fontWeight: 500, fontSize: 15 }}>09/07/2018</p>
+                                            <p>
+                                                Áo đẹp và chất lượng lắm bà con ơi! Mình sẽ ủng hộ shop này dài dài.
+                                                Thuê trúng đợt shop ưu đãi giảm giá, vải chất lượng đã vậy còn được giảm
+                                                giá nữa chứ, thích quá thích. Không phải tự dưng mà tuy khen shop này
+                                                đâu nhé. Đồ gì đâu mà vừa chất lượng lại vừa có giá vô cùng rẻ nữa chứ.
+                                                Lần đầu tiên thuê đồ online nên là hơi lo lo, cứ sợ bị lừa. Nhưng đỡ cái
+                                                là shop này hỗ trợ cho mình rất tận tình luôn nên cũng yên tâm được phần
+                                                nào.
+                                            </p>
                                         </div>
                                     </div>
                                     <div className="product_review_form">
-                                        <form action="#">
-                                            <h2>Add a review </h2>
-                                            <p>Your email address will not be published. Required fields are marked </p>
-                                            <div className="row">
-                                                <div className="col-12">
-                                                    <label htmlFor="review_comment">Your review </label>
-                                                    <textarea name="comment" id="review_comment" defaultValue={""} />
-                                                </div>
-                                                <div className="col-lg-6 col-md-6">
-                                                    <label htmlFor="author">Name</label>
-                                                    <input id="author" type="text" />
-                                                </div>
-                                                <div className="col-lg-6 col-md-6">
-                                                    <label htmlFor="email">Email </label>
-                                                    <input id="email" type="text" />
-                                                </div>
+                                        <h2>THÊM ĐÁNH GIÁ </h2>
+                                        <div className="d-flex align-items-center" style={{ gap: 10 }}>
+                                            <p style={{ marginBottom: 0, fontWeight: 500, fontSize: 16 }}>
+                                                Đánh giá sản phẩm
+                                            </p>
+                                            <Rating
+                                                size={25}
+                                                initialValue={0}
+                                                fillColor="#00BBA6"
+                                                className="p-0 m-0"
+                                            />
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-12">
+                                                <label
+                                                    htmlFor="review_comment"
+                                                    style={{ fontWeight: 500, fontSize: 16 }}
+                                                >
+                                                    Tiêu đề đánh giá
+                                                </label>
+                                                <textarea
+                                                    placeholder="Nhập tiêu đề nhận xét của bạn tại đây (tối đa 50 ký tự)"
+                                                    style={{ height: 50 }}
+                                                    name="comment"
+                                                    id="review_comment"
+                                                    defaultValue={""}
+                                                />
                                             </div>
-                                            <button type="submit">Submit</button>
-                                        </form>
+                                            <div className="col-12">
+                                                <label
+                                                    htmlFor="review_comment"
+                                                    style={{ fontWeight: 500, fontSize: 16 }}
+                                                >
+                                                    Viết đánh giá của bạn
+                                                </label>
+                                                <textarea
+                                                    placeholder="Viết đánh giá của bạn tại đây. Nội dung đánh giá phải ít nhất 20 ký tự."
+                                                    style={{ height: 69 }}
+                                                    name="comment"
+                                                    id="review_comment"
+                                                    defaultValue={""}
+                                                />
+                                            </div>
+                                        </div>
+                                        <button
+                                            className="btn btn-success"
+                                            style={{ backgroundColor: "#009483", marginTop: 5 }}
+                                        >
+                                            Gửi
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -453,39 +469,49 @@ const DetailProduct = () => {
                 </div>
                 <div className="row">
                     {dataProduct?.map((item, idx) => (
-                        <div key={idx} className="col-lg-3 col-md-4 col-sm-6">
+                        <div key={idx} className="col-lg-3">
                             <div className="single_product">
                                 <div className="product_thumb">
-                                    <Link to={`/detail-product/${item.id}`}>
-                                        <img src={item.img} alt="" />
+                                    <Link to={`/detail-product/${item.id}`} onClick={handleDetail}>
+                                        <img src={dataProduct[idx].img} alt="" />
                                     </Link>
                                     <div className="img_icone">
-                                        <img src={item.status} alt="" />
+                                        <img src={SpanNew} alt="" />
                                     </div>
                                     <div className="product_action">
-                                        <Link to={`/detail-product/${item.id}`}>
-                                            {" "}
-                                            <i className="fa fa-shopping-cart" />
-                                            Thêm vào giỏ hàng
+                                        <Link to={`/detail-product/${item.id}`} onClick={handleDetail}>
+                                            <i className="fa fa-shopping-cart" /> Thêm vào giỏ hàng
                                         </Link>
                                     </div>
                                 </div>
-                                <div className="product_content" style={{ textAlign: "left" }}>
+                                <div className="product_content pt-2">
                                     <h3 className="product_title">
-                                        <Link to={"/"}>{item.name}</Link>
+                                        <a href="">{dataProduct[idx].name}</a>
                                     </h3>
-                                    <span className="product_price" style={{ fontSize: "14px", fontWeight: "lighter" }}>
-                                        <del>{item.oldPrice}</del>
+                                    <p
+                                        className="old-price"
+                                        style={{ textDecoration: "line-through", display: "inline" }}
+                                    >
+                                        {dataProduct[idx].oldPrice + " - 50$"}
+                                    </p>
+                                    <br />
+                                    <span className="" style={{ fontSize: 18, fontWeight: 700 }}>
+                                        {dataProduct[idx].price}
                                     </span>
-                                    <span className="product_price">{item.price}</span>
-                                    <div className="star">
-                                        <img src={Star} alt="" />
-                                        <img src={Star} alt="" />
-                                        <img src={Star} alt="" />
-                                        <img src={Star} alt="" />
-                                        <img src={StarBlack} alt="" />
+
+                                    <div className="d-flex" style={{ gap: 10 }}>
+                                        <Rating size={15} initialValue={4} fillColor="#00BBA6" className="p-0 m-0" />
+                                        <span>Đã thuê: 76</span>
                                     </div>
-                                    <p style={{ display: "inline" }}>Đã thuê: 76</p>
+                                </div>
+                                <div className="product_info">
+                                    <ul>
+                                        <li>
+                                            <a href="#" title=" Thêm vào danh sách yêu thích ">
+                                                Thêm vào danh sách yêu thích
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
