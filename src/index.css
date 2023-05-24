@@ -353,7 +353,3 @@ aside {
 .nav-tabs .nav-link.active {
     border-color: transparent transparent red transparent;
 }
-
-.select-default {
-    padding: 20px;
-}
