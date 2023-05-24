@@ -42,24 +42,32 @@ export default function Header() {
                     </div>
                     <div className="col-lg-6 col-md-6">
                         <div className="header_links">
-                            <ul className="row align-items-center">
+                            <ul className="row align-items-center text-center">
                                 <li>
-                                    <Link to={"/about-us"}>Liên Hệ</Link>
-                                </li>
-                                <li>
-                                    <Link to={""}>Sản Phẩm Yêu Thích</Link>
-                                </li>
-                                <li>
-                                    <Link onClick={handleCart} to={"#"}>
-                                        Giỏ Hàng
+                                    <Link to={"/about-us"}>
+                                        <p>Liên Hệ</p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to={"/register"}>Đăng Ký</Link>
+                                    <Link to={""}>
+                                        <p>Sản Phẩm Yêu Thích</p>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link onClick={handleCart} to={"#"}>
+                                        <p>Giỏ Hàng</p>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to={"/register"}>
+                                        <p>Đăng Ký</p>
+                                    </Link>
                                 </li>
                                 <li>
                                     {!isAuthenticated ? (
-                                        <Link to={"/login"}>Đăng Nhập</Link>
+                                        <Link to={"/login"}>
+                                            <p>Đăng Nhập</p>
+                                        </Link>
                                     ) : (
                                         <LinkWithDropdown to="#" style={{ color: "#00BBA6", padding: "7px 10px " }}>
                                             <i
@@ -79,8 +87,8 @@ export default function Header() {
             </div>
             {/*header top end*/}
             {/*header middel*/}
-            <div className="header_middel">
-                <div className="row align-items-center">
+            <div className="header_middel d-flex align-items-center" style={{ height: 120 }}>
+                <div className="row justify-content-between" style={{ width: "100%" }}>
                     {/*logo start*/}
                     <div className="col-lg-3 col-md-3">
                         <div className="logo">
@@ -90,7 +98,7 @@ export default function Header() {
                         </div>
                     </div>
                     {/*logo end*/}
-                    <div className="col-lg-9 col-md-9">
+                    <div className="col-lg-8 col-md-8">
                         <div className="header_right_info">
                             <div className="search_bar">
                                 <form action="#">
@@ -147,10 +155,10 @@ export default function Header() {
                                                 </a>
                                             </div>
                                         </div>
-                                        <div className="cart_button d-flex justify-content-end">
+                                        <div className="mt-2 cart_button d-flex justify-content-end">
                                             <button
                                                 onClick={(e) => handleCart(e)}
-                                                className="btn"
+                                                className="btn btn_add_cart"
                                                 style={{ color: "#ffffff", backgroundColor: "#00BBA6" }}
                                             >
                                                 Xem giỏ hàng
@@ -180,31 +188,31 @@ export default function Header() {
                                             <Link to={"/about-us"}>GIỚI THIỆU</Link>
                                         </li>
                                         <li className={location.pathname == "/product" ? "active" : ""}>
-                                            <Link to={"/product"}>SẢN PHẨM</Link>
+                                            <Link to={"#"}>SẢN PHẨM</Link>
                                             <div className="mega_menu">
                                                 <div className="mega_items">
                                                     <h3>TRANG PHỤC</h3>
                                                     <ul>
                                                         <li>
-                                                            <Link href="#">Thiếu nhi</Link>
+                                                            <Link to={"/product"}>Thiếu nhi</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="#">Truyền thống</Link>
+                                                            <Link to={"/product"}>Truyền thống</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="#">Nước ngoài</Link>
+                                                            <Link to={"/product"}>Nước ngoài</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="#">Hoá trang</Link>
+                                                            <Link to={"/product"}>Hoá trang</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="#">Thường ngày</Link>
+                                                            <Link to={"/product"}>Thường ngày</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="#">Dự tiệc</Link>
+                                                            <Link to={"/product"}>Dự tiệc</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="#">Tất cả</Link>
+                                                            <Link to={"/product"}>Tất cả</Link>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -212,25 +220,25 @@ export default function Header() {
                                                     <h3>PHỤ KIỆN</h3>
                                                     <ul>
                                                         <li>
-                                                            <Link href="#">Tác giả</Link>
+                                                            <Link to={"/product"}>Tác giả</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="#">Cà vạt & nơ</Link>
+                                                            <Link to={"/product"}>Cà vạt & nơ</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="#">Giày dép</Link>
+                                                            <Link to={"/product"}>Giày dép</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="#">Túi xách</Link>
+                                                            <Link to={"/product"}>Túi xách</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="#">Trâm cài tóc</Link>
+                                                            <Link to={"/product"}>Trâm cài tóc</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="#">Quạt</Link>
+                                                            <Link to={"/product"}>Quạt</Link>
                                                         </li>
                                                         <li>
-                                                            <Link href="#">Tất cả</Link>
+                                                            <Link to={"/product"}>Tất cả</Link>
                                                         </li>
                                                     </ul>
                                                 </div>

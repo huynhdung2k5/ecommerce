@@ -226,7 +226,6 @@ ul li a.active {
     /* Auto layout */
     align-items: flex-start;
     padding: 6px 40px;
-    margin: 0px 10px;
 
     background: #ffffff;
     border: 1px solid #e3e3e3;
@@ -243,6 +242,7 @@ ul li a.active {
 }
 .container-product .content .order-options .common-option .order-total .order-total-title {
     margin-right: 20px;
+    padding-top: 3px;
 }
 .container-product .content .order-options .common-option .order-total .order-total-price {
     font-family: "Quicksand";
@@ -257,6 +257,7 @@ ul li a.active {
     margin-right: -10px;
     float: right;
     display: flex;
+    margin: 10px 0px;
 }
 
 .container-product .content .order-options .common-option .btn-outline-success {
@@ -527,6 +528,48 @@ ol.carousel-indicators .active {
     display: flex;
     align-items: center;
     text-align: center;
+}
+
+.product_title {
+    font-family: "MonteCarlo";
+}
+
+.detail_prod_size {
+    margin-left: 10px;
+    position: inherit;
+    width: 77.48px;
+    height: 31px;
+    left: 258.52px;
+    top: 5.2px;
+
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+}
+
+.btn_rating {
+    cursor: pointer;
+}
+
+.btn_choice_img {
+    cursor: pointer;
+}
+.btn_choice_img:hover {
+    background-color: #e84c3d !important;
+}
+
+.star_total_text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 33px;
+    /* or 275% */
+
+    display: flex;
+    align-items: center;
+
+    color: #333333;
 }
 
 .carousel-caption {

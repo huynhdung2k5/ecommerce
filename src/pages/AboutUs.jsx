@@ -31,12 +31,12 @@ const AboutUs = () => {
             {/*about section area */}
             <div className="about_section">
                 <div className="row align-items-center">
-                    <div className="col-lg-6 col-md-6">
+                    <div className="col-lg-6 col-md-6 p-0">
                         <div className="about_thumb">
-                            <img src={About1} alt="" />
+                            <img width={"100%"} src={About1} alt="" />
                         </div>
                     </div>
-                    <div className="col-lg-6 col-md-6">
+                    <div className="col-lg-6 col-md-6 p-4">
                         <div className="about_content">
                             <h1>Trang Phục</h1>
                             <p>
@@ -70,9 +70,9 @@ const AboutUs = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-6 col-md-6">
+                    <div className="col-lg-6 col-md-6 p-0">
                         <div className="about_thumb">
-                            <img src={About2} alt="" />
+                            <img width="100%" src={About2} alt="" />
                         </div>
                     </div>
                 </div>

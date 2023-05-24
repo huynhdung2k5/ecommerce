@@ -105,15 +105,15 @@ export default function AllOrder() {
 
                     <div className="order-options">
                         <div className="common-option">
-                            <div className="order-total">
+                            <div className="order-total d-flex justify-content-end align-item-center">
                                 <div className="order-total-title">
-                                    <label>Tổng cộng:</label>
+                                    <label style={{ margin: 0 }}>Tổng tiền:</label>
                                 </div>
                                 <div className="order-total-price">
                                     <span className="vlaue-summary">300.000đ</span>
                                 </div>
                             </div>
-                            <div className="btn-option">
+                            <div className="btn-option d-flex justify-content-end" style={{ gap: 10 }}>
                                 <button
                                     onClick={(e) => handleDetails(e)}
                                     type="submit"

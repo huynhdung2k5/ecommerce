@@ -67,8 +67,8 @@ export default function UserLayout({ children }) {
                 </div>
             </div>
             <div className="row" style={{ padding: "20px " }}>
-                <div className="col-md-4">
-                    <ul className="list-group">
+                <div className="col-md-3">
+                    <ul className="list-group" style={{ gap: 4 }}>
                         {items.map((item, index) => (
                             <Link
                                 key={index}
@@ -80,7 +80,11 @@ export default function UserLayout({ children }) {
                                     key={index}
                                     onClick={() => handleClick(index)}
                                     style={{
-                                        backgroundColor: index === selected ? "#00BBA6" : "",
+                                        border: "none",
+                                        fontStyle: "normal",
+                                        fontWeight: 600,
+                                        fontSize: 16,
+                                        backgroundColor: index === selected ? "#00BBA6" : "#F7F7F7",
                                     }}
                                 >
                                     {item.name}

@@ -15,7 +15,7 @@ export default function LinkWithDropdown({ to, children }) {
             <Link to={to} className="dropdown-toggle" data-toggle="dropdown">
                 {children}
             </Link>
-            <div className="dropdown-menu" style={{ width: 250, top: 56, left: 60 }}>
+            <div className="dropdown-menu" style={{ width: 238, top: 56 }}>
                 <Link to="/user/profile" className="dropdown-item">
                     Thông tin tài khoảng
                 </Link>

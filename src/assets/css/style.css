@@ -64,6 +64,13 @@
 }
 
 /* 2.1 header top css here*/
+
+.header_links p {
+    font-family: "Quicksan" sans-serif;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
 .switcher > ul,
 .header_links > ul {
     display: -webkit-box;
@@ -192,7 +199,7 @@
 .shopping_cart > a {
     font-family: "Quicksand" sans-serif;
     font-size: 13px;
-    font-weight: 500px;
+    font-weight: 500;
     font-size: 13px;
     padding: 0 15px;
     display: block;
@@ -204,13 +211,21 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid #ddd;
     padding: 15px 0;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
     width: 390px;
 }
+
+.btn_add_cart {
+    cursor: pointer;
+}
+.btn_add_cart:hover {
+    background-color: #e84c3d !important;
+}
+
 .mini_cart {
     position: absolute;
     /* width: 300px; */
@@ -526,7 +541,7 @@
     background-position: center center;
     background-size: cover;
     position: relative;
-    background-image: url(../img/slider/slide_4.png);
+    background-image: url(../img/slider/slider_5.png);
     margin-bottom: 50px;
 }
 .single_slider::before {
@@ -781,7 +796,6 @@
     overflow: hidden;
     -webkit-transition: 0.3s;
     transition: 0.3s;
-    position: relative;
 }
 .product_thumb img {
     width: inherit;
@@ -799,9 +813,7 @@
     transition: 0.3s;
     pointer-events: none;
 }
-.single_product:hover .product_thumb::before {
-    opacity: 0.2;
-}
+
 .product_active.owl-carousel .img_icone img {
     width: inherit;
 }
@@ -915,7 +927,7 @@
     padding: 8px;
 }
 .single_product:hover {
-    border: 1px solid #009483;
+    border: 2px solid #009483;
 }
 .product_active.owl-carousel .owl-nav div,
 .brand_active.owl-carousel .owl-nav div,
@@ -1872,6 +1884,10 @@
     line-height: 35px;
     padding: 0 15px;
     margin-left: 21px;
+}
+
+.list-button button.main:hover {
+    background-color: #e84c3d;
 }
 
 .list-button button.item {
@@ -3242,6 +3258,7 @@
 .about_section.section_two .about_thumb {
     text-align: center;
 }
+
 .about_section.section_two .about_content {
     margin-bottom: 25px;
 }

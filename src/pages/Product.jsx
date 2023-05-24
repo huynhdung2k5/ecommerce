@@ -44,8 +44,16 @@ const Product = () => {
                             <div className="single_slider">
                                 <div className="slider_content">
                                     <div className="slider_content_inner" style={{ textAlign: "center" }}>
-                                        <h1>Beauty Outfits</h1>
-                                        <p>Thời trang cho mọi người - mặc là đẹp.</p>
+                                        <span
+                                            className="product_title"
+                                            style={{
+                                                fontSize: 76,
+                                                color: "#ffffff",
+                                            }}
+                                        >
+                                            Beauty Outfits
+                                        </span>
+                                        <p className="mt-4">Thời trang cho mọi người - mặc là đẹp.</p>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +67,7 @@ const Product = () => {
                                 <div className="list_button">
                                     <div className="select_option">
                                         <form action="#">
-                                            <label>Giới tính</label>
+                                            <label>Sắp xếp theo</label>
                                             <select
                                                 className="select-default"
                                                 name="orderby"
@@ -86,7 +94,7 @@ const Product = () => {
                                 </div>
                                 <div className="select_option">
                                     <form action="#">
-                                        <label>Sắp xếp theo</label>
+                                        <label>Giới tính</label>
                                         <select
                                             name="orderby"
                                             id="short"
@@ -129,12 +137,18 @@ const Product = () => {
                                                     <h3 className="product_title">
                                                         <a href="">{dataProduct[idx].name}</a>
                                                     </h3>
-                                                    <p
-                                                        className="old-price"
-                                                        style={{ textDecoration: "line-through", display: "inline" }}
-                                                    >
-                                                        {dataProduct[idx].oldPrice + " - 50$"}
-                                                    </p>
+                                                    <div className="d-flex align-items-center">
+                                                        <p
+                                                            className="old-price"
+                                                            style={{
+                                                                textDecoration: "line-through",
+                                                                display: "inline",
+                                                            }}
+                                                        >
+                                                            {dataProduct[idx].oldPrice}
+                                                        </p>
+                                                        <p>- 50%</p>
+                                                    </div>
                                                     <br />
                                                     <span className="" style={{ fontSize: 18, fontWeight: 700 }}>
                                                         {dataProduct[idx].price}

@@ -8,12 +8,16 @@ export default function Profile() {
             >
                 <div className="mx-auto my-auto d-flex flex-column">
                     <i className="fa fa-user-circle-o mb-3" style={{ color: "#00BBA6", fontSize: 100 }} />
-                    <button type="button" className="btn" style={{ color: "white", backgroundColor: "#00BBA6" }}>
+                    <button
+                        type="button"
+                        className="btn btn_choice_img"
+                        style={{ color: "white", backgroundColor: "#00BBA6" }}
+                    >
                         Chọn ảnh
                     </button>
                 </div>
             </div>
-            <div className="col-md-5 ml-4">
+            <div className="col-6 ml-3">
                 <div>
                     <span style={{ fontSize: 16 }}>Nhập họ và tên</span>
                     <input
@@ -125,7 +129,7 @@ export default function Profile() {
                     <div className="d-flex justify-content-end">
                         <button
                             onClick={(e) => e.preventDefault()}
-                            className="btn col-md-4"
+                            className="btn col-md-4 btn_choice_img"
                             style={{ backgroundColor: "#00BBA6", color: "white" }}
                         >
                             Lưu chỉnh sửa

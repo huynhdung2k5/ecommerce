@@ -45,33 +45,32 @@ import { dataProduct } from "../data/product";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+    const sliderRef1 = useRef(null);
+    const sliderRef2 = useRef(null);
 
-const sliderRef1 = useRef(null);
-const sliderRef2 = useRef(null);
+    const next1 = () => {
+        sliderRef1.current.slickNext();
+    };
 
-  const next1 = () => {
-    sliderRef1.current.slickNext();
-  };
+    const previous1 = () => {
+        sliderRef1.current.slickPrev();
+    };
 
-  const previous1 = () => {
-    sliderRef1.current.slickPrev();
-  };
+    const next2 = () => {
+        sliderRef2.current.slickNext();
+    };
 
-  const next2 = () => {
-    sliderRef2.current.slickNext();
-  };
+    const previous2 = () => {
+        sliderRef2.current.slickPrev();
+    };
 
-  const previous2 = () => {
-    sliderRef2.current.slickPrev();
-  };
-
-  const settings = {
-    // dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4
-  };
+    const settings = {
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        arrows: false,
+    };
 
     return (
         <>
@@ -133,7 +132,7 @@ const sliderRef2 = useRef(null);
                     </div>
                 </div>
                 {/*new product area start*/}
-                <div className="new_product_area product_two">
+                <div className="new_product_area product_two mt-5">
                     <div className="row">
                         <div className="col-12">
                             <div className="block_title">
@@ -149,7 +148,7 @@ const sliderRef2 = useRef(null);
                                         <img src={ThieuNhi} alt="" />
                                     </a>
                                 </div>
-                                <div className="product_content mt-3">
+                                <div className="product_content mt-3 d-flex justify-content-center">
                                     <h3 className="product_title">
                                         <a href="">Thiếu Nhi</a>
                                     </h3>
@@ -163,7 +162,7 @@ const sliderRef2 = useRef(null);
                                         <img src={TruyenThong} alt="" />
                                     </a>
                                 </div>
-                                <div className="product_content mt-3">
+                                <div className="product_content mt-3 d-flex justify-content-center">
                                     <h3 className="product_title">
                                         <a href="">Truyền Thống</a>
                                     </h3>
@@ -177,7 +176,7 @@ const sliderRef2 = useRef(null);
                                         <img src={CaCNuoc} alt="" />
                                     </a>
                                 </div>
-                                <div className="product_content mt-3">
+                                <div className="product_content mt-3 d-flex justify-content-center">
                                     <h3 className="product_title">
                                         <a href="">Các Nước</a>
                                     </h3>
@@ -191,7 +190,7 @@ const sliderRef2 = useRef(null);
                                         <img src={HoaTrang} alt="" />
                                     </a>
                                 </div>
-                                <div className="product_content mt-3">
+                                <div className="product_content mt-3 d-flex justify-content-center">
                                     <h3 className="product_title">
                                         <a href="">Hóa Trang</a>
                                     </h3>
@@ -205,7 +204,7 @@ const sliderRef2 = useRef(null);
                                         <img src={ThuongNgay} alt="" />
                                     </a>
                                 </div>
-                                <div className="product_content mt-3">
+                                <div className="product_content mt-3 d-flex justify-content-center">
                                     <h3 className="product_title">
                                         <a href="">Thường Ngày</a>
                                     </h3>
@@ -219,7 +218,7 @@ const sliderRef2 = useRef(null);
                                         <img src={DuTiec} alt="" />
                                     </a>
                                 </div>
-                                <div className="product_content mt-3">
+                                <div className="product_content mt-3 d-flex justify-content-center">
                                     <h3 className="product_title">
                                         <a href="">Dự tiệc</a>
                                     </h3>
@@ -245,7 +244,7 @@ const sliderRef2 = useRef(null);
                                         <img src={Quat} alt="" />
                                     </a>
                                 </div>
-                                <div className="product_content mt-3">
+                                <div className="product_content mt-3 d-flex justify-content-center">
                                     <h3 className="product_title">
                                         <a href="">Tóc giả</a>
                                     </h3>
@@ -259,7 +258,7 @@ const sliderRef2 = useRef(null);
                                         <img src={TramCai} alt="" />
                                     </a>
                                 </div>
-                                <div className="product_content mt-3">
+                                <div className="product_content mt-3 d-flex justify-content-center">
                                     <h3 className="product_title">
                                         <a href="">Cà vạt & nơ</a>
                                     </h3>
@@ -273,7 +272,7 @@ const sliderRef2 = useRef(null);
                                         <img src={TuiXach} alt="" />
                                     </a>
                                 </div>
-                                <div className="product_content mt-3">
+                                <div className="product_content mt-3 d-flex justify-content-center">
                                     <h3 className="product_title">
                                         <a href="">Giày dép</a>
                                     </h3>
@@ -287,7 +286,7 @@ const sliderRef2 = useRef(null);
                                         <img src={Dep} alt="" />
                                     </a>
                                 </div>
-                                <div className="product_content mt-3">
+                                <div className="product_content mt-3 d-flex justify-content-center">
                                     <h3 className="product_title">
                                         <a href="">Túi xách</a>
                                     </h3>
@@ -301,7 +300,7 @@ const sliderRef2 = useRef(null);
                                         <img src={Cavat} alt="" />
                                     </a>
                                 </div>
-                                <div className="product_content mt-3">
+                                <div className="product_content mt-3 d-flex justify-content-center">
                                     <h3 className="product_title">
                                         <a href="">Trâm cài tóc</a>
                                     </h3>
@@ -315,7 +314,7 @@ const sliderRef2 = useRef(null);
                                         <img src={TocGia} alt="" />
                                     </a>
                                 </div>
-                                <div className="product_content mt-3">
+                                <div className="product_content mt-3 d-flex justify-content-center">
                                     <h3 className="product_title">
                                         <a href="">Quạt</a>
                                     </h3>
@@ -331,22 +330,45 @@ const sliderRef2 = useRef(null);
                             <div className="block_title d-flex justify-content-between align-items-center">
                                 <h3 className="mb-3">Sản phẩm mới</h3>
                                 <div className="d-flex mb-3" style={{ textAlign: "center", gap: 8 }}>
-                                    <button className="btn btn-sm" onClick={previous1} style={{cursor: "pointer", backgroundColor: "#CCCCCC", color: "#FFFFFF",padding: "0px 10px", fontSize:10,height: 22,lineHeight: "22px"}}>
-                                    <i class="fa-solid fa-chevron-left"></i>
+                                    <button
+                                        className="btn btn-sm"
+                                        onClick={previous1}
+                                        style={{
+                                            cursor: "pointer",
+                                            backgroundColor: "#CCCCCC",
+                                            color: "#FFFFFF",
+                                            padding: "0px 10px",
+                                            fontSize: 10,
+                                            height: 22,
+                                            lineHeight: "22px",
+                                        }}
+                                    >
+                                        <i class="fa-solid fa-chevron-left"></i>
                                     </button>
-                                    <button className="btn btn-sm" onClick={next1} style={{cursor: "pointer", backgroundColor: "#CCCCCC", color: "#FFFFFF",padding: "0px 10px", fontSize:10,height: 22,lineHeight: "22px"}}>
-                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <button
+                                        className="btn btn-sm"
+                                        onClick={next1}
+                                        style={{
+                                            cursor: "pointer",
+                                            backgroundColor: "#CCCCCC",
+                                            color: "#FFFFFF",
+                                            padding: "0px 10px",
+                                            fontSize: 10,
+                                            height: 22,
+                                            lineHeight: "22px",
+                                        }}
+                                    >
+                                        <i class="fa-solid fa-chevron-right"></i>
                                     </button>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                     {/* <div> */}
-                        <Slider ref={sliderRef1} {...settings}>
-                            {dataProduct.map((product, idx) => (
-                            // <div key={idx} className="col-lg-3">
-                                <div key={idx} className="single_product">
+                    <Slider ref={sliderRef1} {...settings}>
+                        {dataProduct.map((product, idx) => (
+                            <div key={idx} className="col-12">
+                                <div className="single_product">
                                     <div className="product_thumb">
                                         <Link to={`/detail-product/${product.id}`}>
                                             <img src={product.img} alt="" />
@@ -364,12 +386,31 @@ const sliderRef2 = useRef(null);
                                         <h3 className="product_title">
                                             <a href="">{product.name}</a>
                                         </h3>
-                                        <p
-                                            className="old-price"
-                                            style={{ textDecoration: "line-through", display: "inline" }}
+                                        <div
+                                            className="row align-items-center"
+                                            style={{ marginLeft: 0, marginRight: 0 }}
                                         >
-                                            {product.oldPrice + " - 50$"}
-                                        </p>
+                                            <p
+                                                className="old-price"
+                                                style={{
+                                                    textDecoration: "line-through",
+                                                    display: "inline",
+                                                    marginBottom: 0,
+                                                }}
+                                            >
+                                                {product.oldPrice}
+                                            </p>
+                                            <p
+                                                style={{
+                                                    display: "inline",
+                                                    marginBottom: 0,
+                                                    fontWeight: 400,
+                                                    fontSize: 14,
+                                                }}
+                                            >
+                                                - 50%
+                                            </p>
+                                        </div>
                                         <br />
                                         <span className="" style={{ fontSize: 18, fontWeight: 700 }}>
                                             {product.price}
@@ -395,10 +436,10 @@ const sliderRef2 = useRef(null);
                                         </ul>
                                     </div>
                                 </div>
-                            // </div>
+                            </div>
                         ))}
-                        </Slider>
-                       
+                    </Slider>
+
                     {/* </div> */}
                 </div>
                 <div className="banner_area banner_two">
@@ -449,11 +490,35 @@ const sliderRef2 = useRef(null);
                             <div className="block_title d-flex justify-content-between align-items-center">
                                 <h3>Sản phẩm thuê nhiều</h3>
                                 <div className="d-flex mb-3" style={{ textAlign: "center", gap: 8 }}>
-                                    <button className="btn btn-sm" onClick={previous2} style={{cursor: "pointer", backgroundColor: "#CCCCCC", color: "#FFFFFF",padding: "0px 10px", fontSize:10,height: 22,lineHeight: "22px"}}>
-                                    <i class="fa-solid fa-chevron-left"></i>
+                                    <button
+                                        className="btn btn-sm"
+                                        onClick={previous2}
+                                        style={{
+                                            cursor: "pointer",
+                                            backgroundColor: "#CCCCCC",
+                                            color: "#FFFFFF",
+                                            padding: "0px 10px",
+                                            fontSize: 10,
+                                            height: 22,
+                                            lineHeight: "22px",
+                                        }}
+                                    >
+                                        <i class="fa-solid fa-chevron-left"></i>
                                     </button>
-                                    <button className="btn btn-sm" onClick={next2} style={{cursor: "pointer", backgroundColor: "#CCCCCC", color: "#FFFFFF",padding: "0px 10px", fontSize:10,height: 22,lineHeight: "22px"}}>
-                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <button
+                                        className="btn btn-sm"
+                                        onClick={next2}
+                                        style={{
+                                            cursor: "pointer",
+                                            backgroundColor: "#CCCCCC",
+                                            color: "#FFFFFF",
+                                            padding: "0px 10px",
+                                            fontSize: 10,
+                                            height: 22,
+                                            lineHeight: "22px",
+                                        }}
+                                    >
+                                        <i class="fa-solid fa-chevron-right"></i>
                                     </button>
                                 </div>
                             </div>
@@ -461,8 +526,8 @@ const sliderRef2 = useRef(null);
                     </div>
                     {/* <div className="row"> */}
                     <Slider ref={sliderRef2} {...settings}>
-                            {dataProduct.map((product, idx) => (
-                            // <div key={idx} className="col-lg-3">
+                        {dataProduct.map((product, idx) => (
+                            <div key={idx} className="col-12">
                                 <div key={idx} className="single_product">
                                     <div className="product_thumb">
                                         <Link to={`/detail-product/${product.id}`}>
@@ -512,10 +577,10 @@ const sliderRef2 = useRef(null);
                                         </ul>
                                     </div>
                                 </div>
-                            // </div>
+                            </div>
                         ))}
-                        </Slider>
-                        
+                    </Slider>
+
                     {/* </div> */}
                 </div>
             </div>

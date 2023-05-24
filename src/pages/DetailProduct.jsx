@@ -194,8 +194,10 @@ const DetailProduct = () => {
                                                 <i className="fa fa-star" />
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="#">Còn lại: 29 | Đã thuê: 76 </a>
+                                        <li className="ml-3">
+                                            <a className="star_total_text" href="#">
+                                                Còn lại: 29 | Đã thuê: 76{" "}
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -203,6 +205,7 @@ const DetailProduct = () => {
                                 <div className="content_price mb-15">
                                     <span>{product.price}</span>
                                     <span className="old-price">{product.oldPrice}</span>
+                                    <span style={{ fontWeight: 500, fontSize: 18 }}>- 50%</span>
                                 </div>
                                 <div className="box_quantity mb-20">
                                     <form action="#">
@@ -216,7 +219,7 @@ const DetailProduct = () => {
                                 </div>
                                 <div className="product_d_size mb-20">
                                     <label htmlFor="group_1">size</label>
-                                    <select name="size" id="group_1" style={{ width: "fit-content" }}>
+                                    <select className="detail_prod_size" name="size" id="group_1">
                                         <option value={1}>S</option>
                                         <option value={2}>M</option>
                                         <option value={3}>L</option>
@@ -244,10 +247,9 @@ const DetailProduct = () => {
                                 </div>
                                 <div className="product_desc">
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati modi culpa
-                                        voluptates illo, quos magni totam inventore delectus perspiciatis
-                                        necessitatibus, iure rerum! Deleniti nobis voluptatibus minus, iusto ullam quae
-                                        esse..
+                                        Áo dài trắng chất vải lụa tằm may dáng áo dài truyền thống 4 tà đẹp. Thiết kế
+                                        may sẵn 2 tà rộng với 1 tà trước và 1 tà sau dày dặn không lo bị xuyên thấu khi
+                                        mặc, kiểu thiết kế cổ cao 2cm ôm eo tạo dáng thanh lịch, hiện đại, thướt tha.
                                     </p>
                                 </div>
                                 <div className="list-button">
@@ -446,7 +448,7 @@ const DetailProduct = () => {
                                             </div>
                                         </div>
                                         <button
-                                            className="btn btn-success"
+                                            className="btn btn-success btn_rating"
                                             style={{ backgroundColor: "#009483", marginTop: 5 }}
                                         >
                                             Gửi
@@ -488,12 +490,15 @@ const DetailProduct = () => {
                                     <h3 className="product_title">
                                         <a href="">{dataProduct[idx].name}</a>
                                     </h3>
-                                    <p
-                                        className="old-price"
-                                        style={{ textDecoration: "line-through", display: "inline" }}
-                                    >
-                                        {dataProduct[idx].oldPrice + " - 50$"}
-                                    </p>
+                                    <div className="d-flex align-items-center">
+                                        <p
+                                            className="old-price"
+                                            style={{ textDecoration: "line-through", display: "inline" }}
+                                        >
+                                            {dataProduct[idx].oldPrice}
+                                        </p>
+                                        <p>- 50%</p>
+                                    </div>
                                     <br />
                                     <span className="" style={{ fontSize: 18, fontWeight: 700 }}>
                                         {dataProduct[idx].price}
