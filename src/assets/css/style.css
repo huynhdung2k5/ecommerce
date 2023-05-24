@@ -677,10 +677,10 @@
 .block_title::before {
     position: absolute;
     content: "";
-    width: 100%;
+    width: 92%;
     height: 4px;
     background: #f2f2f2;
-    right: 0;
+    right: -50;
     top: 31%;
     -webkit-transform: translatey(-50%);
     transform: translatey(-50%);

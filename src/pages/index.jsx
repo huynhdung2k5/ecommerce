@@ -30,7 +30,12 @@ import Product11 from "../assets/img/product/pr11.png";
 import slider2 from "../assets/img/slider/slider_2.png";
 import slider3 from "../assets/img/slider/slider_3.png";
 import slider4 from "../assets/img/slider/slide_4.png";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+
+// slick
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // rating
 import { Rating } from "react-simple-star-rating";
@@ -40,6 +45,34 @@ import { dataProduct } from "../data/product";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+
+const sliderRef1 = useRef(null);
+const sliderRef2 = useRef(null);
+
+  const next1 = () => {
+    sliderRef1.current.slickNext();
+  };
+
+  const previous1 = () => {
+    sliderRef1.current.slickPrev();
+  };
+
+  const next2 = () => {
+    sliderRef2.current.slickNext();
+  };
+
+  const previous2 = () => {
+    sliderRef2.current.slickPrev();
+  };
+
+  const settings = {
+    // dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4
+  };
+
     return (
         <>
             <div className="pos_home_section">
@@ -295,41 +328,51 @@ const Home = () => {
                 <div className="new_product_area product_two" style={{ marginTop: "40px" }}>
                     <div className="row">
                         <div className="col-12">
-                            <div className="block_title">
-                                <h3>Sản phẩm mới</h3>
+                            <div className="block_title d-flex justify-content-between align-items-center">
+                                <h3 className="mb-3">Sản phẩm mới</h3>
+                                <div className="d-flex mb-3" style={{ textAlign: "center", gap: 8 }}>
+                                    <button className="btn btn-sm" onClick={previous1} style={{cursor: "pointer", backgroundColor: "#CCCCCC", color: "#FFFFFF",padding: "0px 10px", fontSize:10,height: 22,lineHeight: "22px"}}>
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                    </button>
+                                    <button className="btn btn-sm" onClick={next1} style={{cursor: "pointer", backgroundColor: "#CCCCCC", color: "#FFFFFF",padding: "0px 10px", fontSize:10,height: 22,lineHeight: "22px"}}>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
+                            
                         </div>
                     </div>
-                    <div className="row">
-                        {Array.from({ length: 4 }).map((_, idx) => (
-                            <div key={idx} className="col-lg-3">
-                                <div className="single_product">
+                    {/* <div> */}
+                        <Slider ref={sliderRef1} {...settings}>
+                            {dataProduct.map((product, idx) => (
+                            // <div key={idx} className="col-lg-3">
+                                <div key={idx} className="single_product">
                                     <div className="product_thumb">
-                                        <Link to={`detail-product/${dataProduct[idx].id}`}>
-                                            <img src={dataProduct[idx].img} alt="" />
+                                        <Link to={`/detail-product/${product.id}`}>
+                                            <img src={product.img} alt="" />
                                         </Link>
                                         <div className="img_icone">
                                             <img src={SpanNew} alt="" />
                                         </div>
                                         <div className="product_action">
-                                            <Link to={`detail-product/${dataProduct[idx].id}`}>
+                                            <Link to={`/detail-product/${product.id}`}>
                                                 <i className="fa fa-shopping-cart" /> Thêm vào giỏ hàng
                                             </Link>
                                         </div>
                                     </div>
                                     <div className="product_content pt-2">
                                         <h3 className="product_title">
-                                            <a href="">{dataProduct[idx].name}</a>
+                                            <a href="">{product.name}</a>
                                         </h3>
                                         <p
                                             className="old-price"
                                             style={{ textDecoration: "line-through", display: "inline" }}
                                         >
-                                            {dataProduct[idx].oldPrice + " - 50$"}
+                                            {product.oldPrice + " - 50$"}
                                         </p>
                                         <br />
                                         <span className="" style={{ fontSize: 18, fontWeight: 700 }}>
-                                            {dataProduct[idx].price}
+                                            {product.price}
                                         </span>
 
                                         <div className="d-flex" style={{ gap: 10 }}>
@@ -352,9 +395,11 @@ const Home = () => {
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            // </div>
                         ))}
-                    </div>
+                        </Slider>
+                       
+                    {/* </div> */}
                 </div>
                 <div className="banner_area banner_two">
                     <div className="row">
@@ -401,41 +446,50 @@ const Home = () => {
                 <div className="new_product_area product_two" style={{ marginTop: "40px" }}>
                     <div className="row">
                         <div className="col-12">
-                            <div className="block_title">
+                            <div className="block_title d-flex justify-content-between align-items-center">
                                 <h3>Sản phẩm thuê nhiều</h3>
+                                <div className="d-flex mb-3" style={{ textAlign: "center", gap: 8 }}>
+                                    <button className="btn btn-sm" onClick={previous2} style={{cursor: "pointer", backgroundColor: "#CCCCCC", color: "#FFFFFF",padding: "0px 10px", fontSize:10,height: 22,lineHeight: "22px"}}>
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                    </button>
+                                    <button className="btn btn-sm" onClick={next2} style={{cursor: "pointer", backgroundColor: "#CCCCCC", color: "#FFFFFF",padding: "0px 10px", fontSize:10,height: 22,lineHeight: "22px"}}>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className="row">
-                        {Array.from({ length: 4 }).map((_, idx) => (
-                            <div key={idx} className="col-lg-3">
-                                <div className="single_product">
+                    {/* <div className="row"> */}
+                    <Slider ref={sliderRef2} {...settings}>
+                            {dataProduct.map((product, idx) => (
+                            // <div key={idx} className="col-lg-3">
+                                <div key={idx} className="single_product">
                                     <div className="product_thumb">
-                                        <Link to={`/detail-product/${dataProduct[idx + 4].id}`}>
-                                            <img src={dataProduct[idx + 4].img} alt="" />
+                                        <Link to={`/detail-product/${product.id}`}>
+                                            <img src={product.img} alt="" />
                                         </Link>
                                         <div className="img_icone">
                                             <img src={SpanNew} alt="" />
                                         </div>
                                         <div className="product_action">
-                                            <Link to={`/detail-product/${dataProduct[idx + 4].id}`}>
+                                            <Link to={`/detail-product/${product.id}`}>
                                                 <i className="fa fa-shopping-cart" /> Thêm vào giỏ hàng
                                             </Link>
                                         </div>
                                     </div>
                                     <div className="product_content pt-2">
                                         <h3 className="product_title">
-                                            <a href="">{dataProduct[idx + 4].name}</a>
+                                            <a href="">{product.name}</a>
                                         </h3>
                                         <p
                                             className="old-price"
                                             style={{ textDecoration: "line-through", display: "inline" }}
                                         >
-                                            {dataProduct[idx + 4].oldPrice + " - 50$"}
+                                            {product.oldPrice + " - 50$"}
                                         </p>
                                         <br />
                                         <span className="" style={{ fontSize: 18, fontWeight: 700 }}>
-                                            {dataProduct[idx + 4].price}
+                                            {product.price}
                                         </span>
 
                                         <div className="d-flex" style={{ gap: 10 }}>
@@ -458,9 +512,11 @@ const Home = () => {
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            // </div>
                         ))}
-                    </div>
+                        </Slider>
+                        
+                    {/* </div> */}
                 </div>
             </div>
         </>
