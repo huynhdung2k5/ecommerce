@@ -183,7 +183,7 @@ ul li a.active {
 }
 
 .btn_add_cart:hover {
-    background-color: #e84c3d!important;
+    background-color: #e84c3d !important;
 }
 
 .text-title,
@@ -598,4 +598,12 @@ ol.carousel-indicators .active {
     font-weight: 600;
     font-size: 30px;
     line-height: 38px;
+}
+
+input[type="checkbox"].test:checked {
+    background-color: #00bba6;
+}
+
+input {
+    background-color: transparent;
 }

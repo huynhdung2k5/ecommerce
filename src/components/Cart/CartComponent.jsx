@@ -1,6 +1,7 @@
 import product1 from "../../assets/img/product/pr11.png";
 import product2 from "../../assets/img/product/pr10.png";
 import product3 from "../../assets/img/product/pr9.png";
+import { useEffect, useState } from "react";
 export default function CartComponent({ steps, setSteps, idx, setSelected }) {
     const items = [
         {
@@ -26,6 +27,28 @@ export default function CartComponent({ steps, setSteps, idx, setSelected }) {
         },
     ];
 
+    const [itemsData, setItemsData] = useState(items);
+
+    // useEffect(() => {
+    //     setItemsData(items);
+    // }, []);
+
+    const increaseQuantity = (idx) => {
+        const updatedItems = [...itemsData];
+        updatedItems[idx].quantity++;
+        setItemsData(updatedItems);
+        console.log(updatedItems);
+    };
+
+    const decreaseQuantity = (idx) => {
+        const updatedItems = [...itemsData];
+        if (updatedItems[idx].quantity > 0) {
+            updatedItems[idx].quantity--;
+        }
+        setItemsData(updatedItems);
+        console.log(updatedItems);
+    };
+
     const handleClick = () => {
         setSelected(idx + 1);
         steps[idx + 1].active = true;
@@ -47,7 +70,7 @@ export default function CartComponent({ steps, setSteps, idx, setSelected }) {
                 </thead>
 
                 <tbody>
-                    {items.map((item, idx) => (
+                    {itemsData.map((item, idx) => (
                         <tr key={idx}>
                             <td className="align-middle text-center">
                                 <div style={{ height: "100%" }} className=" container d-flex justify-content-center">
@@ -89,8 +112,8 @@ export default function CartComponent({ steps, setSteps, idx, setSelected }) {
                             <td className="align-middle text-center">
                                 <div className="d-flex" style={{ gap: 3 }}>
                                     <button
+                                        onclick={() => decreaseQuantity(idx)}
                                         className="btn"
-                                        onclick=""
                                         style={{ backgroundColor: "#ffffff", border: "1px solid #EDEDED" }}
                                     >
                                         <i className="fa-sharp fa-solid fa-minus"></i>
@@ -102,9 +125,10 @@ export default function CartComponent({ steps, setSteps, idx, setSelected }) {
                                         min="0"
                                         max="999"
                                         oninput="null"
-                                        defaultValue={item.quantity}
+                                        value={item.quantity}
                                     />
                                     <button
+                                        onClick={() => increaseQuantity(idx)}
                                         style={{ backgroundColor: "#ffffff", border: "1px solid #EDEDED" }}
                                         className="btn"
                                     >

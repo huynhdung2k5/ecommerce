@@ -57,7 +57,7 @@ const Login = () => {
                                             placeholder="Nhập mật khẩu"
                                         />
                                         <div className="d-flex"></div>
-                                        <p style={{ float: "right" }}>
+                                        <p style={{ float: "right", cursor: "pointer" }}>
                                             <b>Quên mật khẩu?</b>
                                         </p>
                                     </div>
@@ -88,9 +88,12 @@ const Login = () => {
                             <div className="text-center">
                                 Bằng việc chọn Đăng Nhập, bạn xác nhận đã đọc &<br />
                                 đồng ý với các
-                                <span style={{ color: "#00BBA6" }}>Chính Sách Bảo Mật & Chia Sẻ Thông Tin</span>
+                                <span style={{ color: "#00BBA6", cursor: "pointer" }}>
+                                    {" "}
+                                    Chính Sách Bảo Mật & Chia Sẻ Thông Tin
+                                </span>
                                 <br />
-                                <span style={{ color: "red" }}>của Beauty Outfits.</span>
+                                <span style={{ color: "red", cursor: "pointer" }}>của Beauty Outfits.</span>
                             </div>
                         </div>
                     </div>
