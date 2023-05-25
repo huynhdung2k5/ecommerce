@@ -51,7 +51,13 @@ const Cart = () => {
     const [steps, setSteps] = useState(items);
 
     const handleClickStepper = (step, idx) => {
-        step.active = !step.active;
+        if(steps[idx - 1].active){
+            const data = steps.find((item) => item === step);
+            data.active = !data.active;
+            steps.splice(idx,1,data);
+            console.log(steps);
+            setSteps(steps.splice(idx,1,data));
+        }
     };
 
     return (
@@ -79,7 +85,7 @@ const Cart = () => {
                         <React.Fragment key={step.id}>
                             <div className={step.active ? "step active" : "step"} data-target={`#${step.id}`}>
                                 <button
-                                    // onClick={() => handleClickStepper(step, idx)}
+                                    onClick={() => handleClickStepper(step, idx)}
                                     type="button"
                                     className="step-trigger"
                                     role="tab"

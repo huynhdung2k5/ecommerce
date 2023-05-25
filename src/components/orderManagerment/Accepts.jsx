@@ -1,4 +1,5 @@
 import Product1 from "../../assets/img/product/pr1.png";
+import {dataProduct} from '../../data/product';
 
 export default function Accepts() {
     return (
@@ -39,74 +40,47 @@ export default function Accepts() {
 
             <div className="container-product">
                 <div className="content">
-                    <div className="product-item" style={{ padding: 10, borderBottom: "1px solid #DDDDDD" }}>
-                        <div className="product-detail">
-                            <div className="product-left">
-                                <div className="product-img">
-                                    <img src={Product1} alt="product img1" />
-                                </div>
-                                <div className="info-product">
-                                    <div className="text-title">
-                                        <p>Đầm trắng - Mẫu 01</p>
-                                    </div>
-                                    <div className="text-type-size">
-                                        <p>Phân loại: Trắng, Size M</p>
-                                    </div>
-                                    <div className="text-number-product">
-                                        <p>Số lượng: 1</p>
-                                    </div>
-                                </div>
-                            </div>
+                    {Array.from({length: 2}).map((_,idx)=> (
+                         <div key={idx} className="product-item" style={{ padding: 10, borderBottom: "1px solid #DDDDDD" }}>
+                         <div className="product-detail">
+                             <div className="product-left">
+                                 <div className="product-img">
+                                     <img src={dataProduct[idx].img} alt="product img1" />
+                                 </div>
+                                 <div className="info-product">
+                                     <div className="text-title">
+                                         <p className="prod_name">{dataProduct[idx].name}</p>
+                                     </div>
+                                     <div className="text-type-size prod_desc">
+                                         <p>Phân loại: Trắng, Size M</p>
+                                     </div>
+                                     <div className="text-number-product prod_desc">
+                                         <p>Số lượng: 1</p>
+                                     </div>
+                                 </div>
+                             </div>
 
-                            <div className="product-right product-price">
-                                <div className="old_price">
-                                    <p>238.000đ</p>
-                                </div>
-                                <div className="price">
-                                    <p>115.000đ</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="product-item" style={{ padding: 10, borderBottom: "1px solid #DDDDDD" }}>
-                        <div className="product-detail">
-                            <div className="product-left">
-                                <div className="product-img">
-                                    <img src={Product1} alt="product img1" />
-                                </div>
-                                <div className="info-product">
-                                    <div className="text-title">
-                                        <p>Đầm trắng - Mẫu 01</p>
-                                    </div>
-                                    <div className="text-type-size">
-                                        <p>Phân loại: Trắng, Size M</p>
-                                    </div>
-                                    <div className="text-number-product">
-                                        <p>Số lượng: 1</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="product-right product-price">
-                                <div className="old_price">
-                                    <p>238.000đ</p>
-                                </div>
-                                <div className="price">
-                                    <p>115.000đ</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                             <div className="product-right product-price d-flex col-6">
+                                 <div className="old_price">
+                                     <p>{dataProduct[idx].oldPrice}</p>
+                                 </div>
+                                 <div className="price">
+                                     <p>{dataProduct[idx].price}</p>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                    ))}
+                    
 
                     <div className="order-options">
                         <div className="common-option">
-                            <div className="order-total">
+                            <div className="order-total d-flex justify-content-end align-item-center">
                                 <div className="order-total-title">
-                                    <label>Tổng cộng:</label>
+                                    <label>Tổng tiền:</label>
                                 </div>
                                 <div className="order-total-price">
-                                    <span className="vlaue-summary">300.000đ</span>
+                                    <span className="vlaue-summary">238.000đ</span>
                                 </div>
                             </div>
                             <div className="btn-option">

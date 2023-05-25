@@ -175,6 +175,17 @@ ul li a.active {
     margin-left: 20px;
     display: block;
 }
+
+.text-title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.btn_add_cart:hover {
+    background-color: #e84c3d!important;
+}
+
 .text-title,
 .text-type-size,
 .text-number-product {
@@ -190,10 +201,8 @@ ul li a.active {
 }
 
 .product-item .product-right {
-    float: right;
     align-items: center;
-    justify-content: center;
-    transform: translateX(250%);
+    justify-content: end;
 }
 .product-item .product-price .old_price,
 .product-item .product-price .price {

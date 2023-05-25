@@ -18,6 +18,12 @@ export default function ChangePassword() {
                             id="current-password"
                             placeholder="Nhập mật khẩu hiện tại"
                         />
+                        <p style={{ float : 'right',fontWtyle: "normal",
+                                    fontWeight: 600,
+                                    fontSize: 14,
+                                    color: "#00BBA6",
+                                    cursor: "pointer"
+                                    }}><b>Quên mật khẩu?</b></p>
                     </div>
 
                     <div className="form-group">

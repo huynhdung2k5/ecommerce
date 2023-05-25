@@ -363,3 +363,22 @@ aside {
 .nav-tabs .nav-link.active {
     border-color: transparent transparent red transparent;
 }
+
+.prod_name {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.prod_desc {
+    color: "#333333";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+}
+.old_price .price {
+    color: "#333333";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+}

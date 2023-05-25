@@ -82,8 +82,12 @@ export default function OrderDetail() {
                             </p>
                             <p style={{ fontWeight: 600, marginBottom: 0, fontSize: 18 }}>199.000đ</p>
                         </td>
-                        <td style={{ textAlign: "center" }}>2</td>
-                        <td style={{ textAlign: "center" }}>20</td>
+                        <td style={{ textAlign: "center",fontStyle: "normal",
+fontWeight: 600,
+fontSize: 18 }}>2</td>
+                        <td style={{ textAlign: "center", color: "#00BBA6",fontStyle: "normal",
+fontWeight: 600,
+fontSize: 18 }}>238.000đ</td>
                     </tr>
                     <tr style={{ border: "1px solid #DDDDDD" }}>
                         <td>
@@ -108,7 +112,7 @@ export default function OrderDetail() {
                                         <p style={{ marginBottom: 0, color: "red" }}> - 50%</p>
                                     </div>
                                     <div className="price">
-                                        <p style={{ fontWeight: 600, marginBottom: 0, fontSize: 18 }}>199.000đ</p>
+                                        <p style={{ fontWeight: 600, marginBottom: 0, fontSize: 18, color: "#00BBA6" }}>199.000đ</p>
                                     </div>
                                 </div>
                             </div>
@@ -119,46 +123,62 @@ export default function OrderDetail() {
                             </p>
                             <p style={{ fontWeight: 600, marginBottom: 0, fontSize: 18 }}>199.000đ</p>
                         </td>
-                        <td style={{ textAlign: "center" }}>2</td>
-                        <td style={{ textAlign: "center" }}>20</td>
+                        <td style={{ textAlign: "center",fontStyle: "normal",
+fontWeight: 600,
+fontSize: 18 }}>1</td>
+                        <td style={{ textAlign: "center",textAlign: "center", color: "#00BBA6",fontStyle: "normal",
+fontWeight: 600,
+fontSize: 18, }}>119.000đ</td>
                     </tr>
                 </tbody>
             </table>
 
             <div className="container d-flex justify-content-end mb-3" style={{ gap: 20 }}>
                 <div className="col-col-md-5 d-flex flex-column gap-3">
-                    <span style={{ fontSize: 18, fontFamily: "Quicksand" }}>Tổng tiền hàng:</span>
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand",fontStyle: "normal", fontWeight: 500 }}>Tổng tiền hàng:</span>
                     <br />
-                    <span style={{ fontSize: 18, fontFamily: "Quicksand" }}>Phí vận chuyển:</span>
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand",fontStyle: "normal", fontWeight: 500 }}>Phí vận chuyển:</span>
                     <br />
-                    <span style={{ fontSize: 18, fontFamily: "Quicksand" }}>Mã giảm giá: </span>
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand",fontStyle: "normal", fontWeight: 500 }}>Mã giảm giá: </span>
                     <br />
-                    <span style={{ fontSize: 18, fontFamily: "Quicksand" }}>Tổng thanh toán:</span>
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand",fontStyle: "normal", fontWeight: 500 }}>Tổng thanh toán:</span>
                     <br />
-                    <span style={{ fontSize: 18, fontFamily: "Quicksand" }}>Phương thức thanh toán:</span>
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand",fontStyle: "normal", fontWeight: 500 }}>Phương thức thanh toán:</span>
+                    <br />
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand",fontStyle: "normal", fontWeight: 500 }}>Ngày bắt đầu thuê:</span>
+                    <br />
+                    <span style={{ fontSize: 18, fontFamily: "Quicksand",fontStyle: "normal", fontWeight: 500 }}>Ngày trả hàng:</span>
                 </div>
                 <div className=" col-col-md-5 d-flex flex-column gap-3 float-right">
-                    <span className="align-self-end" style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>
+                    <span className="align-self-end" style={{ fontSize: 18, fontFamily: "Quicksand", float: "right",fontStyle: "normal", fontWeight: 500 }}>
                         537.000đ
                     </span>
                     <br />
-                    <span className="align-self-end" style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>
+                    <span className="align-self-end" style={{ fontSize: 18, fontFamily: "Quicksand", float: "right",fontStyle: "normal", fontWeight: 500 }}>
                         15.000đ
                     </span>
                     <br />
-                    <span className="align-self-end" style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>
+                    <span className="align-self-end" style={{ fontSize: 18, fontFamily: "Quicksand", float: "right",fontStyle: "normal", fontWeight: 500 }}>
                         -10.000đ
                     </span>
                     <br />
                     <span
                         className="align-self-end"
-                        style={{ color: "#E74B32", fontWeight: "bold", fontSize: 18, float: "right" }}
+                        style={{ color: "#E74B32", fontWeight: "bold", fontSize: 18, float: "right",fontStyle: "normal", fontWeight: 700 }}
                     >
                         362.000đ
                     </span>
                     <br />
-                    <span className="align-self-end" style={{ fontSize: 18, fontFamily: "Quicksand", float: "right" }}>
+                    <span className="align-self-end" style={{ fontSize: 18, fontFamily: "Quicksand", float: "right",fontStyle: "normal", fontWeight: 500 }}>
                         Thanh toán khi nhận hàng
+                    </span>
+                    <br />
+                    <span className="align-self-end" style={{ fontSize: 18, fontFamily: "Quicksand", float: "right",fontStyle: "normal", fontWeight: 500 }}>
+                        22/03/2023
+                    </span>
+                    <br />
+                    <span className="align-self-end" style={{ fontSize: 18, fontFamily: "Quicksand", float: "right",fontStyle: "normal", fontWeight: 500 }}>
+                        25/03/2023
                     </span>
                 </div>
             </div>
@@ -175,13 +195,13 @@ export default function OrderDetail() {
                 <div className="btn-option d-flex" style={{ float: "right", gap: 10 }}>
                     <button
                         className="btn btn-lg btn-light"
-                        style={{ alignItems: "center", fontSize: 16, fontWeight: 700 }}
+                        style={{ alignItems: "center", fontSize: 16, fontWeight: 700,backgroundColor:"transparent", border: "0.3px solid #333333", cursor:"pointer" }}
                     >
                         Liên hệ
                     </button>
                     <button
                         className="btn btn-lg btn-light"
-                        style={{ alignItems: "center", fontSize: 16, fontWeight: 700 }}
+                        style={{ alignItems: "center", fontSize: 16, fontWeight: 700,backgroundColor:"transparent", border: "0.3px solid #333333", cursor:"pointer"  }}
                         data-toggle="modal"
                         data-target="#exampleModal"
                     >
