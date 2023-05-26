@@ -25,23 +25,26 @@ export default function Header() {
     const location = useLocation();
 
     const { isAuthenticated } = useAuthContext();
+    
+    const {isCart} = useSelector((state) => state.carts);
+    const dispatch = useDispatch();
+
+    const [value, setValue] = useState(true);
+
 
     const handleCart = (e) => {
         e.preventDefault();
-        navigate("/cart");
         setCartShow(!cartShow);
-        // if (isAuthenticated) {
-        //     setCartShow(!cartShow);
-        // } else {
-        //     toast.error("Vui lòng đăng nhập");
-        // }
+        navigate("/cart");
     };
 
-    const {isCart} = useSelector((state) => state.carts);
-
     useEffect(()=>{
-        console.log(location.pathname);
-    },[]);
+        if(location.pathname === '/cart'){
+            dispatch(setCartSlice(false));
+        }else{
+            dispatch(setCartSlice(true));
+        }
+    },[location.pathname])
 
     return (
         <div className="header_area">
@@ -98,6 +101,7 @@ export default function Header() {
             </div>
             {/*header top end*/}
             {/*header middel*/}
+            {isCart && 
             <React.Fragment>
                 <div className="header_middel d-flex align-items-center" style={{ height: 120 }}>
                     <div className="row justify-content-between" style={{ width: "100%" }}>
@@ -269,7 +273,7 @@ export default function Header() {
                         </div>
                     </div>
                 </div>
-            </React.Fragment>
+            </React.Fragment>}
         </div>
     );
 }

@@ -4,9 +4,11 @@ import Done1 from "../assets/img/done1.png";
 import Pay2 from "../assets/img/pay2.png";
 import Done2 from "../assets/img/done2.png";
 import Product1 from "../assets/img/product/pr1.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import { useAuthContext } from "../auth/useAuthContext";
 import React, { useEffect, useRef, useState } from "react";
+import Logo from "../assets/img/logo/logobeau.png";
+// import Logo from "./assets/img/logo/logobeau.png";
 
 //Components
 import CartComponent from "../components/Cart/CartComponent";
@@ -62,25 +64,14 @@ const Cart = () => {
 
     return (
         <div className="">
-            <div className="breadcrumbs_area">
-                <div className="row">
-                    <div className="col-12">
-                        <div className="breadcrumb_content">
-                            <ul>
-                                <li>
-                                    <a href="index.html">Trang chủ</a>
-                                </li>
-                                <li>
-                                    <i className="fa fa-angle-right" />
-                                </li>
-                                <li>Giỏ Hàng</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          
             <div className="bs-stepper">
                 <div className="bs-stepper-header" role="tablist">
+                <div className="logo">
+                                <Link to={"/"}>
+                                    <img src={Logo} alt="" />
+                                </Link>
+                            </div>
                     {steps.map((step, idx) => (
                         <React.Fragment key={step.id}>
                             <div className={step.active ? "step active" : "step"} data-target={`#${step.id}`}>
@@ -91,6 +82,7 @@ const Cart = () => {
                                     role="tab"
                                     aria-controls={step.id}
                                     id={step.id}
+                                    
                                 >
                                     <span
                                         className="bs-stepper-circle"
