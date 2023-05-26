@@ -14,17 +14,17 @@ import PaymentComponent from "../components/Cart/PaymentComponent";
 import Completed from "../components/Cart/Completed";
 
 const Cart = () => {
-    const { isAuthenticated } = useAuthContext();
+    // const { isAuthenticated } = useAuthContext();
     const navigate = useNavigate();
     const handlePayment = () => {
         navigate("/payment", { replace: true });
     };
 
-    useEffect(() => {
-        if (!isAuthenticated) {
-            navigate("/");
-        }
-    }, [isAuthenticated]);
+    // useEffect(() => {
+    //     if (!isAuthenticated) {
+    //         navigate("/");
+    //     }
+    // }, [isAuthenticated]);
 
     // stepper
     const items = [
@@ -50,15 +50,15 @@ const Cart = () => {
     const [selected, setSelected] = useState(0);
     const [steps, setSteps] = useState(items);
 
-    const handleClickStepper = (step, idx) => {
-        if(steps[idx - 1].active){
-            const data = steps.find((item) => item === step);
-            data.active = !data.active;
-            steps.splice(idx,1,data);
-            console.log(steps);
-            setSteps(steps.splice(idx,1,data));
-        }
-    };
+    // const handleClickStepper = (step, idx) => {
+    //     if(steps[idx - 1].active){
+    //         const data = steps.find((item) => item === step);
+    //         data.active = !data.active;
+    //         steps.splice(idx,1,data);
+    //         console.log(steps);
+    //         setSteps(steps.splice(idx,1,data));
+    //     }
+    // };
 
     return (
         <div className="">

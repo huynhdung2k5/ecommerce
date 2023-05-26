@@ -28,12 +28,13 @@ export default function Header() {
 
     const handleCart = (e) => {
         e.preventDefault();
-        if (isAuthenticated) {
-            setCartShow(!cartShow);
-            navigate("/cart");
-        } else {
-            toast.error("Vui lòng đăng nhập");
-        }
+        navigate("/cart");
+        setCartShow(!cartShow);
+        // if (isAuthenticated) {
+        //     setCartShow(!cartShow);
+        // } else {
+        //     toast.error("Vui lòng đăng nhập");
+        // }
     };
 
     const {isCart} = useSelector((state) => state.carts);
@@ -59,12 +60,12 @@ export default function Header() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to={""}>
+                                    <Link to={"/product"}>
                                         <p>Sản Phẩm Yêu Thích</p>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link onClick={handleCart} to={"#"}>
+                                    <Link to={"/cart"}>
                                         <p>Giỏ Hàng</p>
                                     </Link>
                                 </li>
