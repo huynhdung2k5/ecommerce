@@ -8,7 +8,7 @@ import { useNavigate,Link } from "react-router-dom";
 import { useAuthContext } from "../auth/useAuthContext";
 import React, { useEffect, useRef, useState } from "react";
 import Logo from "../assets/img/logo/logobeau.png";
-// import Logo from "./assets/img/logo/logobeau.png";
+
 
 //Components
 import CartComponent from "../components/Cart/CartComponent";
@@ -17,10 +17,13 @@ import Completed from "../components/Cart/Completed";
 
 const Cart = () => {
     // const { isAuthenticated } = useAuthContext();
+
     const navigate = useNavigate();
     const handlePayment = () => {
         navigate("/payment", { replace: true });
     };
+
+
 
     // useEffect(() => {
     //     if (!isAuthenticated) {
@@ -65,7 +68,7 @@ const Cart = () => {
     return (
         <div className="">
           
-            <div className="bs-stepper">
+            <div className="bs-stepper" >
                 <div className="bs-stepper-header" role="tablist">
                 <div className="logo">
                                 <Link to={"/"}>

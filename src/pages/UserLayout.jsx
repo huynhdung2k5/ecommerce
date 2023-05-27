@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../auth/useAuthContext";
 
 export default function UserLayout({ children }) {
     const items = [
@@ -32,6 +33,8 @@ export default function UserLayout({ children }) {
     const currentPath = location.pathname;
     const currentLink = currentPath.split("/")[2];
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         const newItem = items.find((item) => item.link === currentLink);
         if (newItem) {
@@ -41,7 +44,12 @@ export default function UserLayout({ children }) {
             setTitle("Quản lí đơn hàng");
             setSelected(1);
         }
+
+        if(!localStorage.getItem('accessToken')){
+            navigate("/login")
+        }
     }, [currentPath]);
+
 
     const handleClick = (index) => {
         setSelected(index);

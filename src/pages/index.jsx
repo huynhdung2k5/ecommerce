@@ -411,7 +411,6 @@ const Home = () => {
                                                 - 50%
                                             </p>
                                         </div>
-                                        <br />
                                         <span className="" style={{ fontSize: 18, fontWeight: 700 }}>
                                             {product.price}
                                         </span>
@@ -550,8 +549,18 @@ const Home = () => {
                                             className="old-price"
                                             style={{ textDecoration: "line-through", display: "inline" }}
                                         >
-                                            {product.oldPrice + " - 50$"}
+                                            {product.oldPrice}
                                         </p>
+                                        <p
+                                                style={{
+                                                    display: "inline",
+                                                    marginBottom: 0,
+                                                    fontWeight: 400,
+                                                    fontSize: 14,
+                                                }}
+                                            >
+                                                - 50%
+                                            </p>
                                         <br />
                                         <span className="" style={{ fontSize: 18, fontWeight: 700 }}>
                                             {product.price}

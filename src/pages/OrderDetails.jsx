@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Product1 from "../assets/img/product/pr1.png";
 import { useNavigate } from "react-router-dom";
 
 export default function OrderDetail() {
+
     const navigate = useNavigate();
 
     const handleExit = (e) => {
@@ -126,7 +127,7 @@ fontSize: 18 }}>238.000đ</td>
                         <td style={{ textAlign: "center",fontStyle: "normal",
 fontWeight: 600,
 fontSize: 18 }}>1</td>
-                        <td style={{ textAlign: "center",textAlign: "center", color: "#00BBA6",fontStyle: "normal",
+                        <td style={{ textAlign: "center", color: "#00BBA6",fontStyle: "normal",
 fontWeight: 600,
 fontSize: 18, }}>119.000đ</td>
                     </tr>
@@ -164,7 +165,7 @@ fontSize: 18, }}>119.000đ</td>
                     <br />
                     <span
                         className="align-self-end"
-                        style={{ color: "#E74B32", fontWeight: "bold", fontSize: 18, float: "right",fontStyle: "normal", fontWeight: 700 }}
+                        style={{ color: "#E74B32", fontSize: 18, float: "right",fontStyle: "normal", fontWeight: 700, }}
                     >
                         362.000đ
                     </span>

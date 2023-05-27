@@ -36,6 +36,7 @@ export default function Header() {
         e.preventDefault();
         setCartShow(!cartShow);
         navigate("/cart");
+        console.log(isAuthenticated);
     };
 
     useEffect(()=>{
@@ -59,31 +60,54 @@ export default function Header() {
                             <ul className="row align-items-center text-center">
                                 <li>
                                     <Link to={"/about-us"}>
-                                        <p>Liên Hệ</p>
+                                        <p style={{
+                                            fontStyle: "normal",
+                                            fontWeight: 500,
+                                            fontSize: 13,
+                                        }}>Liên Hệ</p>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to={"/product"}>
-                                        <p>Sản Phẩm Yêu Thích</p>
+                                        <p style={{
+                                            fontStyle: "normal",
+                                            fontWeight: 500,
+                                            fontSize: 13,
+                                        }}>Sản Phẩm Yêu Thích</p>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to={"/cart"}>
-                                        <p>Giỏ Hàng</p>
+                                        <p style={{
+                                            fontStyle: "normal",
+                                            fontWeight: 500,
+                                            fontSize: 13,
+                                        }}>Giỏ Hàng</p>
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link to={"/register"}>
-                                        <p>Đăng Ký</p>
-                                    </Link>
-                                </li>
-                                <li>
-                                    {!isAuthenticated ? (
-                                        <Link to={"/login"}>
-                                            <p>Đăng Nhập</p>
-                                        </Link>
-                                    ) : (
-                                        <LinkWithDropdown to="#" style={{ color: "#00BBA6", padding: "7px 10px " }}>
+                                {!isAuthenticated? (
+                                    <React.Fragment>
+                                        <li>
+                                            <Link to={"/register"}>
+                                                <p style={{
+                                                    fontStyle: "normal",
+                                                    fontWeight: 500,
+                                                    fontSize: 13,
+                                                }}>Đăng ký</p>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to={"/login"}>
+                                                <p style={{
+                                                    fontStyle: "normal",
+                                                    fontWeight: 500,
+                                                    fontSize: 13,
+                                                }}>Đăng Nhập</p>
+                                            </Link>
+                                        </li>
+                                    </React.Fragment>
+                                ) : (
+                                    <LinkWithDropdown to="#" style={{ color: "#00BBA6", padding: "7px 10px " }}>
                                             <i
                                                 className="fa fa-user-circle-o"
                                                 style={{ color: "#00BBA6", marginRight: 2 }}
@@ -92,8 +116,8 @@ export default function Header() {
                                                 Tài khoản
                                             </span>
                                         </LinkWithDropdown>
-                                    )}
-                                </li>
+                                )}
+                                
                             </ul>
                         </div>
                     </div>

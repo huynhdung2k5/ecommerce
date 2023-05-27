@@ -40,7 +40,9 @@ export default function Address() {
                         className="btn btn-lg btn-outline-light text-align-center"
                         type="button"
                         style={{fontStyle: "normal",
-                        padding: "5px 0px",
+                        height: 40,
+                        width: 185,
+                        padding: "5px",
                             fontWeight: 500,
                             fontSize: 16, borderColor: "#00BBA6", color: "#00BBA6" }}
                     >
