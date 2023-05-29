@@ -15,7 +15,7 @@ export default function PaymentComponent({ steps, setSteps, idx, setSelected }) 
         setSteps(steps);
     };
     return (
-        <div className="row">
+        <div className="row p-3">
             <div className="pay mt-5" style={{ width: "100%", padding: 10 }}>
                 <div className="pay_left left col-8 p-0">
                     <div className="border section_container">
@@ -174,7 +174,7 @@ export default function PaymentComponent({ steps, setSteps, idx, setSelected }) 
                         </div>
                     </div>
                     <div className="d-flex" style={{ gap: 3 }}>
-                        <div className="col-6">
+                        <div className="col-6 pl-0">
                             <p
                                 style={{
                                     fontStyle: "normal",
@@ -186,7 +186,7 @@ export default function PaymentComponent({ steps, setSteps, idx, setSelected }) 
                             </p>
                             <DatePicker showIcon selected={startDate} onChange={(date) => setStartDate(date)} />
                         </div>
-                        <div className="col-6">
+                        <div className="col-6 pr-1">
                             <p
                                 style={{
                                     fontStyle: "normal",

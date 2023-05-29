@@ -90,7 +90,7 @@ export function AuthProvider({ children }) {
 
     // LOGIN
     const login = useCallback((phone, password) => {
-        if (phone === "12345678" && password === "12345678") {
+        if (phone === "0967177830" && password === "a12345678") {
             signToken(phone);
             // setSession(accessToken);
             dispatch({

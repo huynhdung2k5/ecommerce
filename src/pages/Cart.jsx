@@ -4,11 +4,10 @@ import Done1 from "../assets/img/done1.png";
 import Pay2 from "../assets/img/pay2.png";
 import Done2 from "../assets/img/done2.png";
 import Product1 from "../assets/img/product/pr1.png";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuthContext } from "../auth/useAuthContext";
 import React, { useEffect, useRef, useState } from "react";
 import Logo from "../assets/img/logo/logobeau.png";
-
 
 //Components
 import CartComponent from "../components/Cart/CartComponent";
@@ -22,8 +21,6 @@ const Cart = () => {
     const handlePayment = () => {
         navigate("/payment", { replace: true });
     };
-
-
 
     useEffect(() => {
         if (!isAuthenticated) {
@@ -59,46 +56,65 @@ const Cart = () => {
         <div className="">
             <div className="bs-stepper">
                 <div className="bs-stepper-header" role="tablist">
-                <div className="logo">
-                                <Link to={"/"}>
-                                    <img src={Logo} alt="" />
-                                </Link>
-                            </div>
+                    <div className="logo">
+                        <Link to={"/"}>
+                            <img src={Logo} alt="" />
+                        </Link>
+                    </div>
                     {steps.map((step, idx) => (
                         <React.Fragment key={step.id}>
                             <div className={step.active ? "step active" : "step"} data-target={`#${step.id}`}>
                                 <button
-                                    onClick={() => handleClickStepper(step, idx)}
+                                    onClick={() => {}}
                                     type="button"
                                     className="step-trigger"
                                     role="tab"
                                     aria-controls={step.id}
                                     id={step.id}
-                                    style={{height:120}}
+                                    style={{ height: 120 }}
                                 >
                                     <span
                                         className="bs-stepper-circle"
-                                        style={{borderRadius: "50%", backgroundColor: step.active ? "#00bba6" : "", height: 67, width: 67, fontSize: 35 }}
+                                        style={{
+                                            borderRadius: "50%",
+                                            backgroundColor: step.active ? "#00bba6" : "",
+                                            height: 67,
+                                            width: 67,
+                                            fontSize: 35,
+                                        }}
                                     >
                                         {idx === 0 && <i className="fa-solid fa-cart-shopping"></i>}
                                         {idx === 1 && <i class="fa-sharp fa-solid fa-cart-plus"></i>}
                                         {idx === 2 && <i class="fa-solid fa-check"></i>}
                                     </span>
-                                    <span style={{ color: step.active ? "#333333" : "",fontStyle: "normal",fontWeight: 700,fontSize: 16 }} className="bs-stepper-label">
+                                    <span
+                                        style={{
+                                            color: step.active ? "#333333" : "",
+                                            fontStyle: "normal",
+                                            fontWeight: 700,
+                                            fontSize: 16,
+                                        }}
+                                        className="bs-stepper-label"
+                                    >
                                         {step.title}
                                     </span>
                                 </button>
                             </div>
                             {idx !== 2 && <div className="line"></div>}
-                            
                         </React.Fragment>
                     ))}
-                    {selected === 2 && <Link to="/product" style={{
-                        fontStyle: "normal",
-                        fontWeight: 600,
-                        fontSize: 16,
-                        paddingRight: 20
-                    }}>Tiếp tục mua sắm {">"}</Link>}
+
+                    <Link
+                        to="/product"
+                        style={{
+                            fontStyle: "normal",
+                            fontWeight: 600,
+                            fontSize: 16,
+                            paddingRight: 20,
+                        }}
+                    >
+                        Tiếp tục mua sắm {">"}
+                    </Link>
                 </div>
                 <div className="bs-stepper-content p-0">
                     <div

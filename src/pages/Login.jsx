@@ -1,10 +1,11 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../auth/useAuthContext";
 import { toast } from "react-toastify";
 
 const Login = () => {
     const { login, isAuthenticated } = useAuthContext();
+    const [isLoginFailed, setIsLoginFailed] = useState(false);
 
     const navigate = useNavigate();
 
@@ -13,11 +14,17 @@ const Login = () => {
     const handleLogin = () => {
         const phone = phoneRef.current.value;
         const password = passwordRef.current.value;
-        if (phone === "12345678" && password === "12345678") {
+        if (phone === "0967177830" && password === "a12345678") {
+            setIsLoginFailed(false);
             login(phone, password);
-        console.log(isAuthenticated);
-        toast.success("Đăng nhập thành công");
-        navigate("/");
+            console.log(isAuthenticated);
+            toast.success("Đăng nhập thành công");
+            navigate("/");
+        } else {
+            phoneRef.current.value = "";
+            phoneRef.current.focus();
+            passwordRef.current.value = "";
+            setIsLoginFailed(true);
         }
     };
     return (
@@ -69,6 +76,18 @@ const Login = () => {
                                         <input type="checkbox" className="item-checkbox" style={{ height: "15px" }} />
                                         <p>Lưu thông tin đăng nhập</p>
                                     </div>
+                                    {isLoginFailed && (
+                                        <p
+                                            style={{
+                                                color: "#E74B32",
+                                                fontStyle: "normal",
+                                                fontWeight: "bold",
+                                                fontSize: 15,
+                                            }}
+                                        >
+                                            Sai tài khoản hoặc mật khẩu
+                                        </p>
+                                    )}
                                     <div onClick={handleLogin} className="bt-main">
                                         <b>Đăng nhập</b>
                                     </div>
