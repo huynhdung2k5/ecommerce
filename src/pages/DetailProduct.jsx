@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { dataProduct } from "../data/product";
 import { Link } from "react-router-dom";
 import Star from "../assets/img/star.png";
@@ -8,11 +8,20 @@ import StarBlack from "../assets/img/star-black.png";
 import { Rating } from "react-simple-star-rating";
 
 import SpanNew from "../assets/img/cart/span-new.png";
+import Slider from "react-slick";
 
 const DetailProduct = () => {
     const [product, setProduct] = useState({});
 
     const { id } = useParams();
+    const sliderRef = useRef(null);
+    const settings = {
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        arrows: false,
+    };
 
     useEffect(() => {
         if (id) {
@@ -27,6 +36,14 @@ const DetailProduct = () => {
             top: 0,
         });
     }, [id]);
+
+    const next = () => {
+        sliderRef.current.slickNext();
+    };
+
+    const previous = () => {
+        sliderRef.current.slickPrev();
+    };
 
     const handleDetail = () => {
         window.scrollTo({
@@ -115,12 +132,7 @@ const DetailProduct = () => {
                                                 <img src={product.img} alt="" />
                                             </div>
                                             <div className="view_img">
-                                                {/* <a
-                          className="large_view"
-                          href={product.img}
-                        >
-                          <i className="fa fa-search-plus" />
-                        </a> */}
+                                      
                                             </div>
                                         </div>
                                     </div>
@@ -464,64 +476,108 @@ const DetailProduct = () => {
             <div className="new_product_area product_page">
                 <div className="row">
                     <div className="col-12">
-                        <div className="block_title">
-                            <h3> sản phẩm tương tự</h3>
-                        </div>
+                    <div className="block_title d-flex justify-content-between align-items-center">
+                                <h3>Sản phẩm tương tự</h3>
+                                <div className="d-flex mb-3" style={{ textAlign: "center", gap: 8 }}>
+                                    <button
+                                        className="btn btn-sm"
+                                        onClick={previous}
+                                        style={{
+                                            cursor: "pointer",
+                                            backgroundColor: "#CCCCCC",
+                                            color: "#FFFFFF",
+                                            padding: "0px 10px",
+                                            fontSize: 10,
+                                            height: 22,
+                                            lineHeight: "22px",
+                                        }}
+                                    >
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </button>
+                                    <button
+                                        className="btn btn-sm"
+                                        onClick={next}
+                                        style={{
+                                            cursor: "pointer",
+                                            backgroundColor: "#CCCCCC",
+                                            color: "#FFFFFF",
+                                            padding: "0px 10px",
+                                            fontSize: 10,
+                                            height: 22,
+                                            lineHeight: "22px",
+                                        }}
+                                    >
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
                     </div>
                 </div>
-                <div className="row">
-                    {dataProduct?.map((item, idx) => (
-                        <div key={idx} className="col-lg-3">
-                            <div className="single_product">
-                                <div className="product_thumb">
-                                    <Link to={`/detail-product/${item.id}`} onClick={handleDetail}>
-                                        <img src={dataProduct[idx].img} alt="" />
-                                    </Link>
-                                    <div className="img_icone">
-                                        <img src={SpanNew} alt="" />
-                                    </div>
-                                    <div className="product_action">
-                                        <Link to={`/detail-product/${item.id}`} onClick={handleDetail}>
-                                            <i className="fa fa-shopping-cart" /> Thêm vào giỏ hàng
+                <Slider ref={sliderRef} {...settings}>
+                        {dataProduct.map((product, idx) => (
+                            <div key={idx} className="col-12">
+                                <div key={idx} className="single_product">
+                                    <div className="product_thumb">
+                                        <Link to={`/detail-product/${product.id}`}>
+                                            <img src={product.img} alt="" />
                                         </Link>
+                                        <div className="img_icone">
+                                            <img src={SpanNew} alt="" />
+                                        </div>
+                                        <div className="product_action">
+                                            <Link to={`/detail-product/${product.id}`}>
+                                                <i className="fa fa-shopping-cart" /> Thêm vào giỏ hàng
+                                            </Link>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="product_content pt-2">
-                                    <h3 className="product_title">
-                                        <a href="">{dataProduct[idx].name}</a>
-                                    </h3>
-                                    <div className="d-flex align-items-center">
+                                    <div className="product_content pt-2">
+                                        <h3 className="product_title">
+                                            <a href="">{product.name}</a>
+                                        </h3>
                                         <p
                                             className="old-price"
                                             style={{ textDecoration: "line-through", display: "inline" }}
                                         >
-                                            {dataProduct[idx].oldPrice}
+                                            {product.oldPrice}
                                         </p>
-                                        <p>- 50%</p>
-                                    </div>
-                                    <br />
-                                    <span className="" style={{ fontSize: 18, fontWeight: 700 }}>
-                                        {dataProduct[idx].price}
-                                    </span>
+                                        <p
+                                                style={{
+                                                    display: "inline",
+                                                    marginBottom: 0,
+                                                    fontWeight: 400,
+                                                    fontSize: 14,
+                                                }}
+                                            >
+                                                - 50%
+                                            </p>
+                                        <br />
+                                        <span className="" style={{ fontSize: 18, fontWeight: 700 }}>
+                                            {product.price}
+                                        </span>
 
-                                    <div className="d-flex" style={{ gap: 10 }}>
-                                        <Rating size={15} initialValue={4} fillColor="#00BBA6" className="p-0 m-0" />
-                                        <span>Đã thuê: 76</span>
+                                        <div className="d-flex" style={{ gap: 10 }}>
+                                            <Rating
+                                                size={15}
+                                                initialValue={4}
+                                                fillColor="#00BBA6"
+                                                className="p-0 m-0"
+                                            />
+                                            <span>Đã thuê: 76</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="product_info">
-                                    <ul>
-                                        <li>
-                                            <a href="#" title=" Thêm vào danh sách yêu thích ">
-                                                Thêm vào danh sách yêu thích
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <div className="product_info">
+                                        <ul>
+                                            <li>
+                                                <a href="#" title=" Thêm vào danh sách yêu thích ">
+                                                    Thêm vào danh sách yêu thích
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </Slider>
             </div>
         </>
     );

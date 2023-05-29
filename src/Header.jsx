@@ -35,8 +35,14 @@ export default function Header() {
     const handleCart = (e) => {
         e.preventDefault();
         setCartShow(!cartShow);
-        navigate("/cart");
-        console.log(isAuthenticated);
+
+        if(isAuthenticated) {
+            navigate("/cart");
+            console.log(isAuthenticated);
+        }else {
+            toast.error("vui lòng đăng nhập")
+        }
+        
     };
 
     useEffect(()=>{

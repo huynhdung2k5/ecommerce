@@ -16,7 +16,7 @@ import PaymentComponent from "../components/Cart/PaymentComponent";
 import Completed from "../components/Cart/Completed";
 
 const Cart = () => {
-    // const { isAuthenticated } = useAuthContext();
+    const { isAuthenticated } = useAuthContext();
 
     const navigate = useNavigate();
     const handlePayment = () => {
@@ -25,11 +25,11 @@ const Cart = () => {
 
 
 
-    // useEffect(() => {
-    //     if (!isAuthenticated) {
-    //         navigate("/");
-    //     }
-    // }, [isAuthenticated]);
+    useEffect(() => {
+        if (!isAuthenticated) {
+            navigate("/");
+        }
+    }, [isAuthenticated]);
 
     // stepper
     const items = [
@@ -55,20 +55,9 @@ const Cart = () => {
     const [selected, setSelected] = useState(0);
     const [steps, setSteps] = useState(items);
 
-    // const handleClickStepper = (step, idx) => {
-    //     if(steps[idx - 1].active){
-    //         const data = steps.find((item) => item === step);
-    //         data.active = !data.active;
-    //         steps.splice(idx,1,data);
-    //         console.log(steps);
-    //         setSteps(steps.splice(idx,1,data));
-    //     }
-    // };
-
     return (
         <div className="">
-          
-            <div className="bs-stepper" >
+            <div className="bs-stepper">
                 <div className="bs-stepper-header" role="tablist">
                 <div className="logo">
                                 <Link to={"/"}>
@@ -85,24 +74,33 @@ const Cart = () => {
                                     role="tab"
                                     aria-controls={step.id}
                                     id={step.id}
-                                    
+                                    style={{height:120}}
                                 >
                                     <span
                                         className="bs-stepper-circle"
-                                        style={{ backgroundColor: step.active ? "#00bba6" : "" }}
+                                        style={{borderRadius: "50%", backgroundColor: step.active ? "#00bba6" : "", height: 67, width: 67, fontSize: 35 }}
                                     >
-                                        <i className="fa-solid fa-cart-shopping"></i>
+                                        {idx === 0 && <i className="fa-solid fa-cart-shopping"></i>}
+                                        {idx === 1 && <i class="fa-sharp fa-solid fa-cart-plus"></i>}
+                                        {idx === 2 && <i class="fa-solid fa-check"></i>}
                                     </span>
-                                    <span style={{ color: step.active ? "#333333" : "" }} className="bs-stepper-label">
+                                    <span style={{ color: step.active ? "#333333" : "",fontStyle: "normal",fontWeight: 700,fontSize: 16 }} className="bs-stepper-label">
                                         {step.title}
                                     </span>
                                 </button>
                             </div>
                             {idx !== 2 && <div className="line"></div>}
+                            
                         </React.Fragment>
                     ))}
+                    {selected === 2 && <Link to="/product" style={{
+                        fontStyle: "normal",
+                        fontWeight: 600,
+                        fontSize: 16,
+                        paddingRight: 20
+                    }}>Tiếp tục mua sắm {">"}</Link>}
                 </div>
-                <div className="bs-stepper-content pb-0">
+                <div className="bs-stepper-content p-0">
                     <div
                         key="cart"
                         id="cart"
