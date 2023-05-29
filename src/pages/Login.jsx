@@ -4,7 +4,7 @@ import { useAuthContext } from "../auth/useAuthContext";
 import { toast } from "react-toastify";
 
 const Login = () => {
-    const { login } = useAuthContext();
+    const { login, isAuthenticated } = useAuthContext();
 
     const navigate = useNavigate();
 
@@ -13,9 +13,12 @@ const Login = () => {
     const handleLogin = () => {
         const phone = phoneRef.current.value;
         const password = passwordRef.current.value;
-        login(phone, password);
+        if (phone === "12345678" && password === "12345678") {
+            login(phone, password);
+        console.log(isAuthenticated);
         toast.success("Đăng nhập thành công");
         navigate("/");
+        }
     };
     return (
         <div className="bg-login">
