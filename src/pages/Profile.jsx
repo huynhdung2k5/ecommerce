@@ -57,7 +57,7 @@ export default function Profile() {
                             aria-label="Default select example"
                         >
                             {Array.from({ length: 31 }, (_, index) => (
-                                <option>{index + 1}</option>
+                                <option key={index}>{index + 1}</option>
                             ))}
                         </select>
                         <select
@@ -66,7 +66,7 @@ export default function Profile() {
                             aria-label="Default select example"
                         >
                             {Array.from({ length: 12 }, (_, index) => (
-                                <option>{`Tháng ${index + 1}`}</option>
+                                <option key={index}>{`Tháng ${index + 1}`}</option>
                             ))}
                         </select>
                         <select
@@ -76,7 +76,7 @@ export default function Profile() {
                         >
                             <option slected>{2001}</option>
                             {Array.from({ length: 100 }, (_, index) => (
-                                <option>{1910 + index + 1}</option>
+                                <option key={index}>{1910 + index + 1}</option>
                             ))}
                         </select>
                     </div>
@@ -84,44 +84,44 @@ export default function Profile() {
                 <div className="d-flex flex-column">
                     <span style={{ fontSize: 16 }}>Ngày sinh</span>
                     <div className="d-flex" style={{ gap: 20 }}>
-                        <div class="form-check">
+                        <div className="form-check">
                             <input
                                 style={{ height: 15 }}
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="radio"
                                 name="gender"
                                 id="male"
                                 value="male"
                             />
-                            <label class="form-check-label" for="male">
+                            <label className="form-check-label" for="male">
                                 Nam
                             </label>
                         </div>
 
-                        <div class="form-check">
+                        <div className="form-check">
                             <input
                                 style={{ height: 15 }}
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="radio"
                                 name="gender"
                                 id="female"
                                 value="female"
                                 defaultChecked={true}
                             />
-                            <label class="form-check-label" for="female">
+                            <label className="form-check-label" for="female">
                                 Nữ
                             </label>
                         </div>
-                        <div class="form-check">
+                        <div className="form-check">
                             <input
                                 style={{ height: 15 }}
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="radio"
                                 name="gender"
                                 id="female"
                                 value="female"
                             />
-                            <label class="form-check-label" for="female">
+                            <label className="form-check-label" for="female">
                                 Khác
                             </label>
                         </div>

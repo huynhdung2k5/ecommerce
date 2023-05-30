@@ -14,8 +14,6 @@ import Policy from "./pages/Policy";
 import Contact from "./pages/Contact";
 import Account from "./pages/Account";
 import Cart from "./pages/Cart";
-import Payment from "./pages/Payment";
-import Dones from "./pages/Done";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
@@ -45,11 +43,10 @@ function App() {
                         <Route path="contact" element={<Contact />} />
                         <Route path="account" element={<Account />} />
                         <Route path="cart" element={<Cart />} />
-                        <Route path="payment" element={<Payment />} />
-                        <Route path="done" element={<Dones />} />
                         <Route path="login" element={<Login />} />
-                        <Route path="register" element={<Register />} />
-                        <Route path="/user" element={<UserLayout />}>
+                        <Route path="register" element={<Register />} />``
+                        <Route path="user" element={<UserLayout />}>
+                            <Route index element={<Profile />} />
                             <Route path="/user/profile" element={<Profile />} />
                             <Route path="/user/order" element={<OrderUser />} />
                             <Route path="/user/address" element={<Address />} />

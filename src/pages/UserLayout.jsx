@@ -42,7 +42,7 @@ export default function UserLayout({ children }) {
             setSelected(items.indexOf(newItem));
         } else {
             setTitle("Quản lí đơn hàng");
-            setSelected(1);
+            setSelected(0);
         }
 
         if(!localStorage.getItem('accessToken')){

@@ -1,8 +1,13 @@
-export default function Completed() {
+export default function Completed({ setSelected, steps, setSteps, idx}) {
+    const handlePrevious = () => {
+        setSelected(idx - 1);
+        steps[idx].active = false;
+        setSteps(steps);
+    }
     return (
-        <div className="container d-flex justify-content-center" style={{ padding: "20px 50px" }}>
+        <div className="container d-flex flex-column align-items-center justify-content-center" style={{ padding: "20px 50px" }}>
             <div className="d-flex flex-column border justify-content-center col-md-10 text-center p-3">
-                <i class="fa-solid fa-circle-check" style={{ fontSize: 65, color: "#00BBA6" }}></i>
+                <i className="fa-solid fa-circle-check" style={{ fontSize: 65, color: "#00BBA6" }}></i>
                 <span style={{ fontWeight: 700, fontSize: 20, color: "#333333" }} className="mt-3">
                     Đặt hàng thành công
                 </span>
@@ -23,6 +28,9 @@ export default function Completed() {
                         Xem đơn hàng
                     </button>
                 </div>
+            </div>
+            <div className="d-flex justify-content-start mt-2" style={{width: "100%"}}>
+                <button className="btn" onClick={()=> handlePrevious()} style={{border:"none", backgroundColor:"transparent", color: "#00BBA6", cursor: "pointer", fontStyle: "normal", fontWeight:"bold", fontSize: 18}}>{"<<"} Quay lại</button>
             </div>
         </div>
     );

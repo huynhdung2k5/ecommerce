@@ -23,7 +23,7 @@ const Cart = () => {
     };
 
     useEffect(() => {
-        if (!isAuthenticated) {
+        if (!localStorage.getItem("accessToken")) {
             navigate("/");
         }
     }, [isAuthenticated]);
@@ -84,8 +84,8 @@ const Cart = () => {
                                         }}
                                     >
                                         {idx === 0 && <i className="fa-solid fa-cart-shopping"></i>}
-                                        {idx === 1 && <i class="fa-sharp fa-solid fa-cart-plus"></i>}
-                                        {idx === 2 && <i class="fa-solid fa-check"></i>}
+                                        {idx === 1 && <i className="fa-sharp fa-solid fa-cart-plus"></i>}
+                                        {idx === 2 && <i className="fa-solid fa-check"></i>}
                                     </span>
                                     <span
                                         style={{
@@ -142,7 +142,7 @@ const Cart = () => {
                         role="tabpanel"
                         aria-labelledby="compeleted"
                     >
-                        <Completed />
+                        <Completed steps={steps} setSelected={setSelected} setSteps={setSteps} idx={selected} />
                     </div>
                 </div>
             </div>

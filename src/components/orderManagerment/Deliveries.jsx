@@ -12,7 +12,7 @@ export function Deliveries() {
                             padding: "12px 0px 6px 12px",
                         }}
                     >
-                        <i style={{ fontSize: 18 }} class="fa-solid fa-magnifying-glass"></i>
+                        <i style={{ fontSize: 18 }} className="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <input
                         type="text"
@@ -22,8 +22,8 @@ export function Deliveries() {
                 </div>
             </div>
 
-            <div class="container">
-                <h3 class="text-null mt-3">Hiện chưa có đơn hàng nào</h3>
+            <div className="container">
+                <h3 className="text-null mt-3">Hiện chưa có đơn hàng nào</h3>
             </div>
         </>
     );

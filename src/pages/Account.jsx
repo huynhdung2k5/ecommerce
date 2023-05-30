@@ -118,7 +118,7 @@ const Account = () => {
                     </li>
                   </ul>
                   <div className="input-search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i className="fa-solid fa-magnifying-glass"></i>
                     <input
                       type="text"
                       placeholder="Tìm đơn hàng theo “Mã đơn hàng” hoặc “Tên sản phẩm”"
@@ -126,7 +126,7 @@ const Account = () => {
                   </div>
                   <div className="box-order">
                     <div className="status-order">
-                      <i class="fa-sharp fa-solid fa-truck-fast"></i>
+                      <i className="fa-sharp fa-solid fa-truck-fast"></i>
                       <div className="ml-3">
                         <b>Giao hàng và trả hàng thành công</b>
                       </div>
@@ -270,7 +270,7 @@ const Account = () => {
                 <div className="tab-pane" id="address">
                   <div className="input-search text-center">
                     <p style={{ margin: "10px auto" }}>
-                      <i class="fa-solid fa-plus"></i>{" "}
+                      <i className="fa-solid fa-plus"></i>{" "}
                       <span className="premium">Thêm địa chỉ mới</span>
                     </p>
                   </div>

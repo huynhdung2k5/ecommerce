@@ -492,7 +492,7 @@ const DetailProduct = () => {
                                             lineHeight: "22px",
                                         }}
                                     >
-                                        <i class="fa-solid fa-chevron-left"></i>
+                                        <i className="fa-solid fa-chevron-left"></i>
                                     </button>
                                     <button
                                         className="btn btn-sm"
@@ -507,7 +507,7 @@ const DetailProduct = () => {
                                             lineHeight: "22px",
                                         }}
                                     >
-                                        <i class="fa-solid fa-chevron-right"></i>
+                                        <i className="fa-solid fa-chevron-right"></i>
                                     </button>
                                 </div>
                             </div>

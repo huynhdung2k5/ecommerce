@@ -99,11 +99,11 @@ const Login = () => {
                             </div>
                             <div className="list-bt">
                                 <div className="btn-ne">
-                                    <i class="fa-brands fa-facebook"></i>
+                                    <i className="fa-brands fa-facebook"></i>
                                     <div>Facebook</div>
                                 </div>
                                 <div className="btn-ne">
-                                    <i class="fa-brands fa-google"></i>
+                                    <i className="fa-brands fa-google"></i>
                                     <div>Google</div>
                                 </div>
                             </div>

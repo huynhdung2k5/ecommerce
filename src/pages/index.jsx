@@ -91,21 +91,21 @@ const Home = () => {
                                     src={slider2}
                                     alt="First slide"
                                 />
-                                <div class="carousel-caption d-none d-md-block">
+                                <div className="carousel-caption d-none d-md-block">
                                     <span className="caorousel-title">Beauty Outfits</span>
                                     <p className="carousel-subtitle">Thời trang cho mọi người - mặc là đẹp.</p>
                                 </div>
                             </div>
                             <div className="carousel-item" style={{ height: 550 }}>
                                 <img className="d-block w-100" src={slider3} alt="Second slide" />
-                                <div class="carousel-caption d-none d-md-block">
+                                <div className="carousel-caption d-none d-md-block">
                                     <span className="caorousel-title">Beauty Outfits</span>
                                     <p className="carousel-subtitle">Thời trang cho mọi người - mặc là đẹp.</p>
                                 </div>
                             </div>
                             <div className="carousel-item" style={{ height: 550 }}>
                                 <img className="d-block w-100" src={slider4} alt="Third slide" />
-                                <div class="carousel-caption d-none d-md-block">
+                                <div className="carousel-caption d-none d-md-block">
                                     <span className="caorousel-title">Beauty Outfits</span>
                                     <p className="carousel-subtitle">Thời trang cho mọi người - mặc là đẹp.</p>
                                 </div>
@@ -343,7 +343,7 @@ const Home = () => {
                                             lineHeight: "22px",
                                         }}
                                     >
-                                        <i class="fa-solid fa-chevron-left"></i>
+                                        <i className="fa-solid fa-chevron-left"></i>
                                     </button>
                                     <button
                                         className="btn btn-sm"
@@ -358,7 +358,7 @@ const Home = () => {
                                             lineHeight: "22px",
                                         }}
                                     >
-                                        <i class="fa-solid fa-chevron-right"></i>
+                                        <i className="fa-solid fa-chevron-right"></i>
                                     </button>
                                 </div>
                             </div>
@@ -502,7 +502,7 @@ const Home = () => {
                                             lineHeight: "22px",
                                         }}
                                     >
-                                        <i class="fa-solid fa-chevron-left"></i>
+                                        <i className="fa-solid fa-chevron-left"></i>
                                     </button>
                                     <button
                                         className="btn btn-sm"
@@ -517,7 +517,7 @@ const Home = () => {
                                             lineHeight: "22px",
                                         }}
                                     >
-                                        <i class="fa-solid fa-chevron-right"></i>
+                                        <i className="fa-solid fa-chevron-right"></i>
                                     </button>
                                 </div>
                             </div>

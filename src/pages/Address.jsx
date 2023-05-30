@@ -8,7 +8,7 @@ export default function Address() {
 
             <div className="container col-md-8">
                 <div className="mb-2 p-2 border d-flex justify-content-center align-items-center">
-                    <i style={{ fontSize: 15, color: "#888888" }} class="mr-2 fa-solid fa-plus"></i>
+                    <i style={{ fontSize: 15, color: "#888888" }} className="mr-2 fa-solid fa-plus"></i>
                     <span style={{ color: "#00BBA6", fontWeight: 600, size: 16 }}>Thên địa chỉ mới</span>
                 </div>
                 <div className="border p-3">

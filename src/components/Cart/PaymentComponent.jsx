@@ -14,6 +14,12 @@ export default function PaymentComponent({ steps, setSteps, idx, setSelected }) 
         steps[idx + 1].active = true;
         setSteps(steps);
     };
+
+    const handlePrevious = () => {
+        setSelected(idx - 1);
+        steps[idx].active = false;
+        setSteps(steps);
+    }
     return (
         <div className="row p-3">
             <div className="pay mt-5" style={{ width: "100%", padding: 10 }}>
@@ -400,6 +406,9 @@ export default function PaymentComponent({ steps, setSteps, idx, setSelected }) 
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="d-flex justify-content-start">
+                <button className="btn" onClick={()=> handlePrevious()} style={{border:"none", backgroundColor:"transparent", color: "#00BBA6", cursor: "pointer", fontStyle: "normal", fontWeight:"bold", fontSize: 18}}>{"<<"} Quay lại</button>
             </div>
         </div>
     );

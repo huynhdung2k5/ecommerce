@@ -30,10 +30,6 @@ export default function CartComponent({ steps, setSteps, idx, setSelected }) {
 
     const [itemsData, setItemsData] = useState(items);
 
-    // useEffect(() => {
-    //     setItemsData(items);
-    // }, []);
-
     const increaseQuantity = (idx) => {
         const updatedItems = [...itemsData];
         updatedItems[idx].quantity++;
@@ -54,7 +50,6 @@ export default function CartComponent({ steps, setSteps, idx, setSelected }) {
         setSelected(idx + 1);
         steps[idx + 1].active = true;
         setSteps(steps);
-        console.log(steps);
     };
     return (
         <React.Fragment>
@@ -126,7 +121,7 @@ export default function CartComponent({ steps, setSteps, idx, setSelected }) {
                                             className="col-2 align-center"
                                             min="0"
                                             max="999"
-                                            oninput="null"
+                                            onInput="null"
                                             value={item.quantity}
                                         />
                                         <button
